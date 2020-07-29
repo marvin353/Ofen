@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Canvas Rahmenprogramm</title>
+    <script type="text/javascript">
+      function zeichne(){
+        var canvas = document.getElementById('canvastest');
+        if (canvas.getContext){
+          var bild = canvas.getContext('2d');
+		 
+		  bild.fillStyle = "rgb(200,0,0)";  
+          bild.fillRect (10, 10, 60, 50);
+		  
+		  bild.strokeStyle= "rgb(0,200,0)";
+		  bild.beginPath(); 
+		  bild.moveTo( 100, 50);
+		  bild.lineTo( 200, 0);
+		  bild.lineTo( 150, 200);
+		  bild.lineTo( 100, 50);
+		  bild.stroke();
+		  
+		  bild.fillStyle = "rgb(0,0,200)";
+		  bild.beginPath(); 
+		  bild.moveTo( 50, 100);
+		  bild.lineTo( 100, 50);
+		  bild.lineTo( 100, 150);
+		  bild.fill();
+		bild.strokeStyle= "rgb(0,0,0)";  
+		bild.beginPath();  
+		bild.arc(75,210,50,0,Math.PI*2,true); // Outer circle  
+		bild.moveTo(110,210);  
+		bild.arc(75,210,35,0,Math.PI,false);   // Mouth (clockwise)  
+		bild.moveTo(65,200);  
+		bild.arc(60,200,5,0,Math.PI*2,true);  // Left eye  
+		bild.moveTo(95,200);  
+		bild.arc(90,200,5,0,Math.PI*2,true);  // Right eye  
+		bild.stroke(); 
+        }
+      }
+    </script>
+  </head>
+  <body onload="zeichne();">
+    <canvas id="canvastest" width="350" height="300" style="border: 1px solid black; "> Ihr Browser kann kein Canvas! </canvas>
+  </body>
+</html>
