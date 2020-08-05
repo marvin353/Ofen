@@ -169,6 +169,12 @@ class Ofen:
     def set_autoModeOff(self):
         self.tempAnalyzer.deactivateAutonomousMode()
 
+    def autoModeAction(self):
+        if(self.tempAnalyzer.get_AutonomousModeState()):
+            self.set_autoModeOff()
+        else:
+            self.set_autoModeOn()
+
 
     def onShutdown(self):
         print("Shutdown initialized...")

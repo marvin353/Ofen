@@ -6,6 +6,7 @@ import time
 import threading
 from ServerMessenger import ServerMessenger
 from LocalDataStorage import LocalDataStorage
+from ButtonObserver import ButtonObserver
 
 
 class OfenMainn(object):
@@ -24,6 +25,8 @@ class OfenMainn(object):
         self.gui = Gui(ofen)
         self.serverMessenger = ServerMessenger(ofen)
         self.localDataStorage = LocalDataStorage(ofen)
+
+        self.buttonObserver = ButtonObserver(ofen)
 
         #Start thrads
         t1 = threading.Thread(target=self.refreshGUI, args=())
@@ -52,10 +55,12 @@ class OfenMainn(object):
 
     def onLaunch(self):
         print("Launching")
+        self.serverMessenger.sendOnlineSignal()
 
     def onShutdown(self):
         self.ofen.onShutdown()
         self.localDataStorage.onShutdown()
+        self.serverMessenger.sendOfflineSignal()
 
 
 
