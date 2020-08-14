@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gui2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/controlfrog/js/eeltestjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/controlfrog/layouts/b/eeltestmain.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ButtonObserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonObserver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui.py" afterDir="false" />
@@ -14,7 +17,7 @@
       <change beforePath="$PROJECT_DIR$/ServerMessenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ServerMessenger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testNotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/testNotebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/eel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/eel.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/eell.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controlfrog/layouts/b/layout-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/layouts/b/layout-8.html" afterDir="false" />
     </list>
@@ -77,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+            <state relative-caret-position="-18">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -159,10 +162,10 @@
         <option value="$PROJECT_DIR$/ButtonObserver.py" />
         <option value="$PROJECT_DIR$/Ofen.py" />
         <option value="$PROJECT_DIR$/eeltestexpose.py" />
-        <option value="$PROJECT_DIR$/Gui.py" />
         <option value="$PROJECT_DIR$/OfenMain.py" />
         <option value="$PROJECT_DIR$/Gui2.py" />
         <option value="$PROJECT_DIR$/LocalDataStorage.py" />
+        <option value="$PROJECT_DIR$/Gui.py" />
       </list>
     </option>
   </component>
@@ -356,12 +359,12 @@
       <workItem from="1591706066073" duration="15686000" />
       <workItem from="1592471090164" duration="1000" />
       <workItem from="1593939688248" duration="55176000" />
-      <workItem from="1596747905917" duration="13685000" />
+      <workItem from="1596747905917" duration="14103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126098000" />
+    <option name="totallyTimeSpent" value="126516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,12 +379,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13733906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13733906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23373494" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23373494" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -539,8 +542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        <state relative-caret-position="-18">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>

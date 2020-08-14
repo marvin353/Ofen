@@ -8,7 +8,7 @@ import eel
 
 class Gui(object):
 
-    def __init__(self,ofenMain ,ofen):
+    def __init__(self, ofenMain ,ofen):
         print("Init Gui")
 
         self.ofenMain = ofenMain
