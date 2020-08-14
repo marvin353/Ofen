@@ -2,11 +2,16 @@ var intervalID ;
 var url = "http://ofenwatch.woller.pizza/yamifood/php/ofenwatch/get_data.php";
 
 var i = 0;
+var local = true; //Set this value depending on the running environment of this script 
 
 function init() {
-	loadData();
-	startPeriodicallyLoading();
-	main();
+	if (!local) {
+		loadData();
+		startPeriodicallyLoading();
+		main();
+	} else {
+		//main();
+	}
 }
 
 function startPeriodicallyLoading() {
@@ -24,6 +29,9 @@ function loadDataAndDraw() {
 }
 
 function loadData() {
+	
+	console.log("loadData");
+	
 	var xhttp;
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -40,20 +48,21 @@ function loadData() {
 } 
 
 //Use this on local Ofen-client, get data directly from PI source, don't access remote DB
-function loadDataFromPython() {
-	let data = eel.getDataFromPython()();
-	console.log("data")
-	parseJSONData(jsonText)
+eel.expose(loadData_Interrupt);
+function loadData_Interrupt(data) {
+	console.log("loadData_Interrupt Data:");
+	console.log(data);
+	parseJSONData(data);
 }
 
 function parseJSONData(jsonText) {
 	
 	obj = JSON.parse(jsonText);
 	
-	console.log(obj[1].timestamp);
+	//console.log(obj[1].timestamp);
 	//console.log(obj[10].timestamp);
 	
-	var latestEntry = obj[obj.length-1]
+	var latestEntry = obj[obj.length-1];
 	//console.log(latestEntry.timestamp);
 	
 	//trigger redrawing

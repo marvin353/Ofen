@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+import json
 #from Ofen import Ofen
 
 class LocalDataStorage(object):
@@ -10,35 +11,39 @@ class LocalDataStorage(object):
         print("Init LocalDataStorage")
         self.ofen = ofen
         #self.conn = sqlite3.connect('OfenLocalDB2.db')
-        self.connect2db()
+        #self.connect2db()
 
     def connect2db(self):
-        self.conn = sqlite3.connect('OfenLocalDB2.db')
-        self.conn.row_factory = self.dict_factory
+        conn = sqlite3.connect('OfenLocalDB2.db')
+        conn.row_factory = self.dict_factory
+        return conn
 
-    def disconnectFromDb(self):
-        self.conn.close()
+    def disconnectFromDb(self, conn):
+        conn.close()
 
     def cleanDb(self):
-        c = self.conn.cursor()
+
+        conn = self.connect2db()
+        c = conn.cursor()
 
         c.execute("DELETE From Records")
-        self.conn.commit()
+        conn.commit()
 
         # We can also close the connection if we are done with it.
         # Just be sure any changes have been committed or they will be lost.
-        #self.conn.close()
+        conn.close()
 
     def getDataAsJson(self):
         print("getDataAsJson")
-
-        cursor = self.conn.cursor()
+        conn = self.connect2db()
+        cursor = conn.cursor()
 
         cursor.execute("SELECT * From Records")
 
         results = cursor.fetchall()
-        print(results)
-        return results
+        conn.close()
+        print(json.dumps(results))
+        return json.dumps(results)
 
     def dict_factory(self, cursor, row):
         d = {}
@@ -58,6 +63,7 @@ class LocalDataStorage(object):
         now = datetime.now()
         date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
         automode = self.ofen.get_autoMode()
+        predictedTemps = [-999,-999,-999]
 
         #ofenid = self.ofen.get_ofenid()
         #temps = [11,12,13,14,15,16,17]
@@ -68,41 +74,45 @@ class LocalDataStorage(object):
         #now = datetime.now()
         #date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
 
+        conn = self.connect2db()
+        c = conn.cursor()
 
-        c = self.conn.cursor()
+        print("CTLocalDB:" + str(temps))
 
         # Insert a row of data
        # c.execute("INSERT INTO Records VALUES (NULL, ofenid, temps[0], temps[1], temps[2], temps[3], temps[4], temps[5], temps[6], temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, date_time)")
 
         sqlite_insert_with_param = """INSERT INTO Records
-                                  (id, ofenid, temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp2hold, drosselklappe, fan, steamRegularizers, fastHeatupActive, automode, timestamp) 
-                                  VALUES (NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
+                                  (id, ofenid, temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp8, temp9, temp10, temp2hold, drosselklappe, fan, steamRegularizers, fastHeatupActive, automode, timestamp) 
+                                  VALUES (NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
 
-        data_tuple = (ofenid, temps[0], temps[1], temps[2], temps[3], temps[4], temps[5], temps[6], temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, automode, date_time)
+        data_tuple = (ofenid, int(temps[0]), int(temps[1]), int(temps[2]), int(temps[3]), int(temps[4]), int(temps[5]), int(temps[6]), int(predictedTemps[0]), int(predictedTemps[1]), int(predictedTemps[2]),temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, automode, date_time)
         c.execute(sqlite_insert_with_param, data_tuple)
 
         # Save (commit) the changes
-        self.conn.commit()
+        conn.commit()
 
         # We can also close the connection if we are done with it.
         # Just be sure any changes have been committed or they will be lost.
-       # self.conn.close()
+        conn.close()
 
     def onShutdown(self):
         print("Clean local DB...")
         self.cleanDb()
-        self.disconnectFromDb()
+        #self.disconnectFromDb()
 
     def getLastEntry(self):
-        cursor = self.conn.cursor()
+        conn = self.connect2db()
+        cursor = conn.cursor()
 
         cursor.execute("SELECT * FROM Records ORDER BY id DESC LIMIT 1")
 
         results = cursor.fetchall()
 
         print(results)
+        conn.close()
 
-
+"""
 class Ofen:
 
     a = [[0,0,0,0,0,0,0]]
@@ -145,3 +155,4 @@ localStorageController = LocalDataStorage(ofen)
 localStorageController.appendData()
 localStorageController.getDataAsJson()
 localStorageController.getLastEntry()
+"""

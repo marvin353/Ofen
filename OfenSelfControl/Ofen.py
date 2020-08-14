@@ -3,13 +3,16 @@ from OfenTempAnalyzer import OfenTempAnalyzer
 import threading
 import time
 import numpy as np
-from HardwareController import HardwareController
+#from HardwareController import HardwareController
 
 class Ofen:
 
     a = [[0,0,0,0,0,0,0]]
 
-    def __init__(self, ofenID):
+    def __init__(self, ofenID, isSimulation):
+
+        self.isSimulation = isSimulation
+
         self.ofenID = ofenID
         self.drosselklappe = 0.0
         self.fan = 0.0
@@ -25,8 +28,11 @@ class Ofen:
 
         self.tempAnalyzer = OfenTempAnalyzer(self)
         self.tempAnalyzer.activateAutonomousMode()
-       # self.btObserver = BTObserver(self)
-        self.hardwareController = HardwareController(self)
+
+        #self.btObserver = BTObserver(self)
+
+        if(not self.isSimulation):
+            self.hardwareController = HardwareController(self)
 
 
     def simulation(self):
@@ -50,12 +56,27 @@ class Ofen:
 
         while True:
 
-            x = self.hardwareController.readTempDataFromArduino()
+            #x = self.currentTemps
 
-            #Only Simulation
-            #x = self.simulation()
+            # Only Simulation
+            if (self.isSimulation):
+                x = self.simulation()
+            else:
+                x = self.hardwareController.readTempDataFromArduino()
 
             print("X:" + str(x) + ",L: " + str(len(self.a)))
+
+            #for idx,value in enumerate(x):
+                #self.currentTemps[idx] = int(x[idx])
+            self.currentTemps[0] = x[0]
+            self.currentTemps[1] = x[1]
+            self.currentTemps[2] = x[2]
+            self.currentTemps[3] = x[3]
+            self.currentTemps[4] = x[4]
+            self.currentTemps[5] = x[5]
+            self.currentTemps[6] = x[6]
+
+            print("CT:" + str(self.currentTemps) + ",L: " + str(len(self.a)))
 
             if (len(self.a) > 59):
                 self.a = self.a[1:60]
@@ -72,14 +93,13 @@ class Ofen:
     def moveSteamRegularizers(self):
         if (self.steamRegularizers == 1):
             self.steamRegularizers = 0.0
-            self.hardwareController.moveSteamRegularizersDown()
-            #TODO: Send message to server
+            if (not self.isSimulation):
+                self.hardwareController.moveSteamRegularizersDown()
             print("SteamRegularizers moved down")
         elif (self.steamRegularizers == 0):
             self.steamRegularizers = 1.0
-            self.hardwareController.moveSteamRegularizersDown()
-
-            #TODO: Send message to server
+            if (not self.isSimulation):
+                self.hardwareController.moveSteamRegularizersUp()
             print("SteamRegularizers moved up")
         else:
             print("SteamRegularizers could not be moved")
@@ -93,7 +113,8 @@ class Ofen:
             return
 
         self.fan = 1.0
-        self.hardwareController.turnFanOn()
+        if (not self.isSimulation):
+            self.hardwareController.turnFanOn()
         print("Fan: 100%")
 
     def stopFan(self):
@@ -102,7 +123,8 @@ class Ofen:
             return
 
         self.fan = 0.0
-        self.hardwareController.turnFanOff()
+        if (not self.isSimulation):
+            self.hardwareController.turnFanOff()
         print("Fan: 0%")
 
     def get_FanValue(self):
@@ -113,26 +135,27 @@ class Ofen:
 
     def set_Drosselklappe(self, value):
         self.drosselklappe = value
-        #TODO: Pi move drosselklappe to value
+        if (not self.isSimulation):
+            self.hardwareController.moveDrosselklappeStepper()
         print("Drosselklappe: " + str(int(value * 100)) + "%")
 
     def get_FastHeatupValue(self):
         return self.isFastHeatUpActive
 
     def fastHeatUp(self):
-        self.setDrosselklappe(1.0)
+        self.set_Drosselklappe(1.0)
         self.activateFan()
         self.isFastHeatUpActive = True
         print("Fast heat up mode active")
 
    # def fastHeatUp(self, temp):
-    #    self.setDrosselklappe(1.0)
+    #    self.set_Drosselklappe(1.0)
      #   self.activateFan()
       #  self.isFastHeatUpActive = False
        # print("Fast heat up mode active; With max temp value: " + str(int(temp)))
 
     def stopfastHeatUp(self):
-        self.setDrosselklappe(0.5)
+        self.set_Drosselklappe(0.5)
         self.stopFan()
         self.isFastHeatUpActive = False
         print("Fast heat up mode stopped")
@@ -179,14 +202,21 @@ class Ofen:
     def onShutdown(self):
         print("Shutdown initialized...")
         self.set_autoModeOff()
-        self.setDrosselklappe(0.0)
+        self.set_Drosselklappe(0.0)
         self.stopFan()
         self.isFastHeatUpActive = False
         #TODO call all shutdown funtions
 
     def restoreLastValues(self, dict):
-
-
+        print("Restore last values")
+        self.ofenID = dict["ofenId"]
+        self.drosselklappe = dict["drosselklappe"]
+        self.fan = dict["fan"]
+        self.steamRegularizers = dict["steamRegularizers"]
+        self.temp2hold = dict["temp2hold"]
+        self.currentTemp = dict["temp1"]
+        self.currentTemps = [dict["temp1"], dict["temp2"], dict["temp3"], dict["temp4"], dict["temp5"], dict["temp6"], dict["temp7"]]
+        self.isFastHeatUpActive = dict["fastHeatupActive"]
 
 
     def printHalloOfen(self):

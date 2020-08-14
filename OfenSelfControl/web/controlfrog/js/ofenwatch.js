@@ -97,6 +97,7 @@
 			
 		}
 		
+		
 		function updateChartofenwatch(dataset) {
 			console.log("updateChart");
 			var data = [];

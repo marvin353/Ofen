@@ -23,3 +23,8 @@ class ServerMessenger:
 
     def sendOnlineSignal(self):
         print("Uploading new data...")
+
+    def logIn(self):
+        print("Login requested")
+
+        return False
