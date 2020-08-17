@@ -19,7 +19,7 @@ class ServerMessenger:
         print("Uploading new data...")
 
     def sendOfflineSignal(self):
-        print("Uploading new data...")
+        print("Offline signal being sent...")
 
     def sendOnlineSignal(self):
         print("Uploading new data...")

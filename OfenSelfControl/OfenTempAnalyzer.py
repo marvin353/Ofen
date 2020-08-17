@@ -164,6 +164,7 @@ class OfenTempAnalyzer:
         return np.median(tempValues, axis=1)
 
 
+
 #o = Ofen(1)
 #ot = OfenTempAnalyzer()
 #print('calculatec: ', ot.calaculate_m(b[0:60]))

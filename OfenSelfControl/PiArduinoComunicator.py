@@ -8,10 +8,11 @@ from HardwareController import HardwareController
 
 class PiArduinoCommunicator:
 
-	def __init__(self):
+	def __init__(self, ofen):
 		print("PiArduinoCommunicator initialized")
 
 		#self.controller = controller
+		self.ofen = ofen
 
 		self.ser = serial.Serial("/dev/ttyACM0", 9600)  # change ACM number as found from ls /dev/tty/ACM*
 		self.ser.baudrate = 9600
@@ -63,7 +64,7 @@ class PiArduinoCommunicator:
 		self.values = values
 
 	def readFromSerialLoop(self):
-		while True:
+		while self.ofen.isOnline:
 			read_ser=self.ser.readline()
 			print(read_ser)
 			self.processTempString(read_ser)

@@ -55,6 +55,13 @@ function loadData_Interrupt(data) {
 	parseJSONData(data);
 }
 
+eel.expose(loadData_Interrupt);
+function loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold ,errors) {
+	console.log("loadData_Interrupt_Settings");
+	updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, errors);
+}
+
+
 function parseJSONData(jsonText) {
 	
 	obj = JSON.parse(jsonText);

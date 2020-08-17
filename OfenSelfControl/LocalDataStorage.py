@@ -110,8 +110,9 @@ class LocalDataStorage(object):
         results = cursor.fetchall()
 
         print(results)
-        conn.close()
 
+        conn.close()
+        return results
 """
 class Ofen:
 

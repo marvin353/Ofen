@@ -1,10 +1,6 @@
-#import webview
-
-#webview.create_window('Hello world', 'https://pywebview.flowrl.com/')
-#webview.create_window('OfenWatch', 'http://localhost/controlfrog/layouts/b/layout-8.html')
-#webview.start()
-
 import eel
+from datetime import datetime
+import sys
 
 class Gui(object):
 
@@ -37,14 +33,17 @@ class Gui(object):
     say_hello_py('Python World!local')
     eel.say_hello_js('Python World! P calls J')
 
+
     # call the javascript function update the view
     def updateView(self):
         i = 0
         print("GUI UpdateView")
         eel.loadData_Interrupt()
 
-    def checkForAlert(self):
-        alerts = self.ofen.get_alertCodes
+   # def checkForAlert(self):
+        #alerts = self.ofen.get_alertCodes
+
+    #def showFailureOverlay(self):
 
     def showFailureOverlay(self):
         print("show failure overlay")
@@ -56,7 +55,4 @@ class Gui(object):
     def getDataFromPython(self):
         print("Get Data from Python")
         return self.ofenMain.getData()
-
-
-
 

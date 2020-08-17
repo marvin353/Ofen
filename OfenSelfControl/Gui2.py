@@ -6,11 +6,14 @@
 
 import eel
 import os
+import sys
+from Ofen import Ofen
 
 class Gui2(object):
 
-    def __init__(self):
+    def __init__(self, ofen):
         print("Init Gui")
+        self.ofen = ofen
 
     def startGUI(self, ofenMain):
         print("Start GUI (EEL) with PID:" + str(os.getpid()))
@@ -29,6 +32,26 @@ class Gui2(object):
         print("GUI UpdateView")
         eel.loadData_Interrupt(str(data))#"HALLO PARKUHR")
         #eel.say_hello_js("Python World! P calls J")
+
+    def updateView_Settings(self):
+        drosselklappe = str(self.ofen.get_Drosselklappe() * 100) + "%"
+        if(self.ofen.get_FastHeatupValue() == 1):
+            fastheatup = "AN"
+        else:
+            fastheatup = "AUS"
+        srzs = str(self.ofen.get_steamRegularizersValue() * 100) + "%"
+        temp2hold = str(self.ofen.get_temp2hold()) + "°C"
+        automode = str(self.ofen.get_temp2hold()) + "°C"
+        air = 0
+        errors = "Keine"
+
+        eel.loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold ,errors)
+
+    def onShutdown(self):
+        print("Shutdown gui")
+        #eel._shutdown
+        #sys.exit("Exit Gui")
+
 
 #@eel.expose                         # Expose this function to Javascript
 #def say_hello_py(x):

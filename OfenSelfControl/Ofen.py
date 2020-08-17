@@ -13,6 +13,8 @@ class Ofen:
 
         self.isSimulation = isSimulation
 
+        self.isOnline = True
+
         self.ofenID = ofenID
         self.drosselklappe = 0.0
         self.fan = 0.0
@@ -23,8 +25,9 @@ class Ofen:
         self.isFastHeatUpActive = False
         self.alertCodes= {"lesswood":False, "sensorerror":False, "programfail":False}
 
-        t1 = threading.Thread(target=self.collectData, args=())
-        t1.start()
+
+        self.t1 = threading.Thread(target=self.collectData, args=())
+        self.t1.start()
 
         self.tempAnalyzer = OfenTempAnalyzer(self)
         self.tempAnalyzer.activateAutonomousMode()
@@ -54,7 +57,7 @@ class Ofen:
 
     def collectData(self):
 
-        while True:
+        while self.isOnline:
 
             #x = self.currentTemps
 
@@ -201,11 +204,13 @@ class Ofen:
 
     def onShutdown(self):
         print("Shutdown initialized...")
+        self.isOnline = False
         self.set_autoModeOff()
         self.set_Drosselklappe(0.0)
         self.stopFan()
         self.isFastHeatUpActive = False
         #TODO call all shutdown funtions
+        self.t1.join()
 
     def restoreLastValues(self, dict):
         print("Restore last values")
@@ -220,7 +225,7 @@ class Ofen:
 
 
     def printHalloOfen(self):
-        print("hallo OFen: " + str(threading.get_ident()))
+        print("hallo Ooen: " + str(threading.get_ident()))
 
     def triggerAlert(self, code, message):
         if code == "lessWood":

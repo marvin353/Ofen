@@ -10,7 +10,7 @@ class HardwareController:
         print("HardwareController initialized")
         self.ofen = ofen
 
-        self.arduinoComm = PiArduinoCommunicator()
+        self.arduinoComm = PiArduinoCommunicator(ofen)
 
         self.currentValue1 = 0.0
         self.currentStep1 = 0

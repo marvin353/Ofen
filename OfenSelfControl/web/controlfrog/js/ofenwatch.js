@@ -69,7 +69,29 @@
 				tempSteamCooler = checkForErrors(obj.temp8,8);
 				tempSteamOutput = checkForErrors(obj.temp9,9);
 				tempStone = checkForErrors(obj.temp10,10);
+				
+				var drosselklappe = obj.drosselklappe * 100 + "%";
+				var srzs = obj.steamRegularizers * 100 + "%";
+				var fastheatup = "---";
+				if (obj.fastHeatupActive == 1) {
+					fastheatup = "AN";
+				} else {
+					fastheatup = "AUS";
+				}
+				var air = "---";
+				var automode = "---";
+				if (obj.automode == 1) {
+					automode = "AN";
+				} else {
+					automode = "AUS";
+				}
+				var temp2hold = obj.temp2hold + "°C";
+				var fan = obj.fan * 100 + "%";
+				var errors = "NULL";
+				
 			//}
+			
+			updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan, errors);
 			
 			//Draw ofen thermogram
 			zeichne(0);
@@ -97,6 +119,26 @@
 			
 		}
 		
+		function updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan, errors) {
+			var drosselklappeVar = document.getElementById("drosselklappe");
+			var srzVar = document.getElementById("srz");
+			var airVar = document.getElementById("lufteinlass");
+			var automodeVar = document.getElementById("automode");
+			var fastheatupVar = document.getElementById("fastheatup");
+			var temp2holdVar = document.getElementById("temp2hold");
+			var fanVar = document.getElementById("fan");
+			
+			drosselklappeVar.innerHTML = drosselklappe;
+			srzVar.innerHTML = srzs;
+			airVar.innerHTML = air;
+			automodeVar.innerHTML = automode;
+			fastheatupVar.innerHTML = fastheatup;
+			temp2holdVar.innerHTML = temp2hold;
+			fanVar.innerHTML = fan;
+			
+			
+		}
+		
 		
 		function updateChartofenwatch(dataset) {
 			console.log("updateChart");
@@ -115,7 +157,7 @@
 			console.log(data);
 			console.log(labels);
 			
-			var labelsNew = labels.map(x => x.substring(11, 16));
+			var labelsNew = labels.map(x => x.substring(11, 17));
 			updateDataset("cf-line-1",labelsNew, data);
 			
 		}

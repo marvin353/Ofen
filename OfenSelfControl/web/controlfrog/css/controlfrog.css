@@ -132,6 +132,7 @@ a:hover {
     .cf-item {
       min-height: auto; } }
   .cf-item header {
+	font-size: 1.2em;
     text-transform: uppercase;
     border-bottom: solid 1px; }
     .cf-item header p {
@@ -156,6 +157,10 @@ a:hover {
 
 .metric-small {
   font-size: 1.5em;
+  line-height: 1; }
+  
+.metric-small2 {
+  font-size: 3em;
   line-height: 1; }
 
 /* Color definitions */
