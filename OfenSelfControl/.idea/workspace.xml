@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ButtonObserver2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TEXT.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ButtonObserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonObserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HardwareController.py" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocalDataStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/LocalDataStorage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ofen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ofen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenLocalDB2.db" beforeDir="false" afterPath="$PROJECT_DIR$/OfenLocalDB2.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenMain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenTempAnalyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiArduinoComunicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiArduinoComunicator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerMessenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ServerMessenger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/css/controlfrog.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/css/controlfrog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/layouts/b/layout-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/layouts/b/layout-8.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ofen.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2581">
@@ -43,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OfenMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
+            <state relative-caret-position="536">
               <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -52,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+            <state relative-caret-position="311">
+              <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -176,11 +161,11 @@
         <option value="$PROJECT_DIR$/OfenTempAnalyzer.py" />
         <option value="$PROJECT_DIR$/Gui.py" />
         <option value="$PROJECT_DIR$/OfenMain.py" />
-        <option value="$PROJECT_DIR$/ButtonObserver.py" />
         <option value="$PROJECT_DIR$/Gui2.py" />
         <option value="$PROJECT_DIR$/Ofen.py" />
         <option value="$PROJECT_DIR$/PiArduinoComunicator.py" />
         <option value="$PROJECT_DIR$/HardwareController.py" />
+        <option value="$PROJECT_DIR$/ButtonObserver.py" />
       </list>
     </option>
   </component>
@@ -374,12 +359,12 @@
       <workItem from="1591706066073" duration="15686000" />
       <workItem from="1592471090164" duration="1000" />
       <workItem from="1593939688248" duration="55176000" />
-      <workItem from="1596747905917" duration="26182000" />
+      <workItem from="1596747905917" duration="26730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138595000" />
+    <option name="totallyTimeSpent" value="139143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -394,12 +379,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13733906" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13733906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23373494" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23373494" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -505,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2130">
@@ -545,22 +520,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfenMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiArduinoComunicator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ofen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2581">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OfenMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -575,12 +560,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ofen.py">
+    <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2581">
-          <caret line="212" selection-start-line="212" selection-end-line="212" />
+        <state relative-caret-position="311">
+          <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

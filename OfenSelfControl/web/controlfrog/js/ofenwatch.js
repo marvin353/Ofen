@@ -154,8 +154,8 @@
 				}
 				
 			}
-			console.log(data);
-			console.log(labels);
+			//console.log(data);
+			//console.log(labels);
 			
 			var labelsNew = labels.map(x => x.substring(11, 17));
 			updateDataset("cf-line-1",labelsNew, data);
@@ -167,7 +167,6 @@
 			zeichne(0);
 			
 			//Update gauges and charts
-			
 			
 			
 			//Dach (Backraum)

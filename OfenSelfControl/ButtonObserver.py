@@ -32,7 +32,7 @@ class ButtonObserver(object):
         self.old_b_dig1 = 1
 
         self.pin1_dig2 = 14
-        self.pin2_dig2 =15
+        self.pin2_dig2 = 15
         self.old_a_dig2 = 1
         self.old_b_dig2 = 1
 
@@ -56,18 +56,14 @@ class ButtonObserver(object):
             if (self.pi.read(self.pin_btn_red) == 0):
                 self.buttonpressed_shutdown()
                 time.sleep(0.1)
-                self.ofenMain.interruptAction()
             if (self.pi.read(self.pin_btn_green) == 0):
                 self.buttonpressed_steamRegularizers()
                 time.sleep(0.1)
-                self.ofenMain.interruptAction()
             if (self.pi.read(self.pin_btn_white_1) == 0):
                 self.buttonpressed_autoMode()
                 time.sleep(0.1)
-                self.ofenMain.interruptAction()
             if (self.pi.read(self.pin_btn_white_2) == 0):
                 time.sleep(0.1)
-                self.ofenMain.interruptAction()
 
             change = self.get_encoder_DIG1()
             if change != 0:
@@ -109,24 +105,28 @@ class ButtonObserver(object):
             print("Button pressed: Shutdown")
             self.shutdownRequest = True
             self.ofenMain.onShutdown()
+            self.ofenMain.interruptAction()
             self.unlockIt(0, 5)
 
     def buttonpressed_steamRegularizers(self):
         if (self.lockIt(1)):
             print("Button pressed: SteamRegulaerizers")
             self.ofen.moveSteamRegularizers()
+            self.ofenMain.interruptAction()
             self.unlockIt(1, 1)
 
     def buttonpressed_autoMode(self):
         if (self.lockIt(2)):
             print("Button pressed: Auto Mode")
             self.ofen.autoModeAction()
+            self.ofenMain.interruptAction()
             self.unlockIt(2, 1)
 
     def buttonpressed_ok(self):
         if (self.lockIt(3)):
             print("Button pressed: OK")
             #self.ofen.autoModeAction()
+            self.ofenMain.interruptAction()
             self.unlockIt(3, 1)
 
     def DIG1Turned_temp2hold(self, change):
