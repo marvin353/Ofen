@@ -2,9 +2,9 @@ import serial
 import RPi.GPIO as GPIO
 import time
 import re
-from Ofen import Ofen
+#from Ofen import Ofen
 import threading
-from HardwareController import HardwareController
+#from HardwareController import HardwareController
 
 class PiArduinoCommunicator:
 
@@ -37,8 +37,8 @@ class PiArduinoCommunicator:
 
 		try:
 			strParts = re.split("-",str)
-			for strPart in strParts:
-				print(strPart)
+			#for strPart in strParts:
+				#print(strPart)
 
 			for idx, strPart in enumerate(strParts):
 				tempParts = re.split(":",strPart)

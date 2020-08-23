@@ -7,7 +7,7 @@ import threading
 from ServerMessenger import ServerMessenger
 from LocalDataStorage import LocalDataStorage
 import sys
-#from ButtonObserver import ButtonObserver
+from ButtonObserver import ButtonObserver
 
 
 class OfenMainn(object):
@@ -15,13 +15,11 @@ class OfenMainn(object):
 
     def __init__(self):
 
-        self.isSimulation = True
+        self.isSimulation = False
 
         print("Init")
         print("main T:" + str(threading.get_ident()))
 
-        #t2 = threading.Thread(target=self.job_1s2,args=())
-        #t2.start()
 
         self.ofen = Ofen(1, self.isSimulation)
         self.ofen.set_temp2hold(300)
@@ -78,12 +76,13 @@ class OfenMainn(object):
 
     def interruptAction(self):
         self.localDataStorage.appendData()
-        Gui2.updateView(self.getData())
+        #Gui2.updateView(self.getData())
+        self.gui.updateView_Settings()
         self.serverMessenger.uploadData()
 
     def interruptAction_DIG(self):
         #self.localDataStorage.appendData()
-        Gui2.updateView(self.getData())
+        self.gui.updateView_Settings()
         #self.serverMessenger.uploadData()
 
 

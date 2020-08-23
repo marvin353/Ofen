@@ -1,4 +1,4 @@
-from Ofen import Ofen
+#from Ofen import Ofen
 from PiArduinoComunicator import PiArduinoCommunicator
 import RPi.GPIO as GPIO
 import time
@@ -16,7 +16,7 @@ class HardwareController:
         self.currentStep1 = 0
         self.motor1running = False
         self.motor2running = False
-
+       
         # Stepper
         try:
             self.Motor1 = DRV8825(dir_pin=13, step_pin=19, enable_pin=12, mode_pins=(16, 17, 20))
@@ -29,6 +29,15 @@ class HardwareController:
         # Relais
         self.RELAIS_1_GPIO = 7
         GPIO.setup(self.RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
+        
+        #Servo
+        self.servoPIN = 5
+        GPIO.setup(self.servoPIN, GPIO.OUT)
+        self.p = GPIO.PWM(self.servoPIN, 50) # GPIO als PWM mit 50Hz
+        self.p.start(2.5)
+        self.SetAngle(self.p, 0)
+        
+        self.turnFanOff()
 
     def turnFanOn(self):
         print("Turn Relais ON: Activate Fan")
@@ -40,13 +49,15 @@ class HardwareController:
 
 
     def moveSteamRegularizersUp(self):
-        print("Move Stepper: SRZs up")
-        self.moveValueSRZs(self, self.Motor2, 1.0)
+        print("Move Servo: SRZs up")
+        #self.moveValueSRZs(self, self.Motor2, 1.0)
+        self.SetAngle(self.p, 160)
 
     def moveSteamRegularizersDown(self):
-        print("Move Stepper: SRZs down")
-        self.moveValueSRZs(self, self.Motor2, 0.0)
-
+        print("Move Servo: SRZs down")
+        #self.moveValueSRZs(self, self.Motor2, 0.0)
+        self.SetAngle(self.p, 0)
+      
     def moveDrosselklappeStepper(self, value):
         print("Move Stepper: Drosselklappe")
         if (not self.motor1running):
@@ -68,7 +79,7 @@ class HardwareController:
 
         if(error["error"]):
             self.ofen.triggerAlert("sensor_error", error["message"])
-            return [-1000,-1000,-1000,-1000,-1000,-1000,-1000]
+            return [0,0,0,0,0,0,0]
 
         temps = self.arduinoComm.get_values()
 
@@ -131,5 +142,14 @@ class HardwareController:
         motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.001)
         motor.Stop()
         self.motor1running = False
+        
+        
+    def SetAngle(self, p, angle):
+        duty = angle / 18 + 2
+        GPIO.output(self.servoPIN, True)
+        p.ChangeDutyCycle(duty)
+        time.sleep(1)
+        GPIO.output(self.servoPIN, False)
+        p.ChangeDutyCycle(0)
 
 

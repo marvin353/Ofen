@@ -3,7 +3,7 @@ from OfenTempAnalyzer import OfenTempAnalyzer
 import threading
 import time
 import numpy as np
-#from HardwareController import HardwareController
+from HardwareController import HardwareController
 
 class Ofen:
 
@@ -24,18 +24,19 @@ class Ofen:
         self.currentTemps = [0, 0, 0, 0, 0, 0, 0]
         self.isFastHeatUpActive = False
         self.alertCodes= {"lesswood":False, "sensorerror":False, "programfail":False}
-
+        
+        if(not self.isSimulation):
+            self.hardwareController = HardwareController(self)
 
         self.t1 = threading.Thread(target=self.collectData, args=())
         self.t1.start()
 
         self.tempAnalyzer = OfenTempAnalyzer(self)
-        self.tempAnalyzer.activateAutonomousMode()
+        #self.tempAnalyzer.activateAutonomousMode()
 
         #self.btObserver = BTObserver(self)
 
-        if(not self.isSimulation):
-            self.hardwareController = HardwareController(self)
+        
 
 
     def simulation(self):
@@ -79,7 +80,7 @@ class Ofen:
             self.currentTemps[5] = x[5]
             self.currentTemps[6] = x[6]
 
-            print("CT:" + str(self.currentTemps) + ",L: " + str(len(self.a)))
+           # print("CT:" + str(self.currentTemps) + ",L: " + str(len(self.a)))
 
             if (len(self.a) > 59):
                 self.a = self.a[1:60]
@@ -139,7 +140,7 @@ class Ofen:
     def set_Drosselklappe(self, value):
         self.drosselklappe = value
         if (not self.isSimulation):
-            self.hardwareController.moveDrosselklappeStepper()
+            self.hardwareController.moveDrosselklappeStepper(self.drosselklappe)
         print("Drosselklappe: " + str(int(value * 100)) + "%")
 
     def get_FastHeatupValue(self):
@@ -193,7 +194,8 @@ class Ofen:
         self.tempAnalyzer.activateAutonomousMode()
 
     def set_autoModeOff(self):
-        self.tempAnalyzer.deactivateAutonomousMode()
+        if(self.tempAnalyzer.get_AutonomousModeState()):
+            self.tempAnalyzer.deactivateAutonomousMode()
 
     def autoModeAction(self):
         if(self.tempAnalyzer.get_AutonomousModeState()):

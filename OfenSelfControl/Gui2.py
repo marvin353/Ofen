@@ -44,8 +44,9 @@ class Gui2(object):
         automode = str(self.ofen.get_temp2hold()) + "°C"
         air = 0
         errors = "Keine"
+        fan = str(self.ofen.get_FanValue() * 100) + "%"
 
-        eel.loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold ,errors)
+        eel.loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan ,errors)
 
     def onShutdown(self):
         print("Shutdown gui")

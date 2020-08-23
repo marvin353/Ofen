@@ -42,7 +42,7 @@ class LocalDataStorage(object):
 
         results = cursor.fetchall()
         conn.close()
-        print(json.dumps(results))
+        #print(json.dumps(results))
         return json.dumps(results)
 
     def dict_factory(self, cursor, row):
@@ -77,7 +77,7 @@ class LocalDataStorage(object):
         conn = self.connect2db()
         c = conn.cursor()
 
-        print("CTLocalDB:" + str(temps))
+        #print("CTLocalDB:" + str(temps))
 
         # Insert a row of data
        # c.execute("INSERT INTO Records VALUES (NULL, ofenid, temps[0], temps[1], temps[2], temps[3], temps[4], temps[5], temps[6], temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, date_time)")
@@ -109,7 +109,7 @@ class LocalDataStorage(object):
 
         results = cursor.fetchall()
 
-        print(results)
+        #print(results)
 
         conn.close()
         return results

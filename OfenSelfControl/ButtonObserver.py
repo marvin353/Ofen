@@ -1,4 +1,4 @@
-from Ofen import Ofen
+#from Ofen import Ofen
 import pigpio
 import time
 import threading
@@ -8,12 +8,16 @@ import time
 class ButtonObserver(object):
 
     def __init__(self,ofenMain, ofen):
+    #def __init__(self):
         print("Init ButtonObserver")
         self.ofenMain = ofenMain
         self.ofen = ofen
+        
+        self.x1 = 0
+        self.x2 = 0
 
         #Buttons
-
+        GPIO.setmode(GPIO.BCM)
         self.pin_btn_red = 23
         self.pin_btn_green = 10
         self.pin_btn_white_1 = 9
@@ -66,27 +70,19 @@ class ButtonObserver(object):
                 time.sleep(0.1)
                 self.ofenMain.interruptAction()
             if (self.pi.read(self.pin_btn_white_2) == 0):
+                self.buttonpressed_ok()
                 time.sleep(0.1)
                 self.ofenMain.interruptAction()
 
             change = self.get_encoder_DIG1()
             if change != 0:
-                x = x + change * 5
-                if (x <= 0):
-                    x = 0
-                print(x)
                 self.DIGTurned_temp2hold(change)
                 change = 0
 
             change2 = self.get_encoder_DIG2()
             if change2 != 0:
-                x = x + change2 * 0.02
-                x = round(x, 2)
-                if (x <= 0):
-                    x = 0
-                print(x)
-                self.DIGTurned_drosselklappe(change)
-                change = 0
+                self.DIGTurned_drosselklappe(change2)
+                change2 = 0
 
             time.sleep(0.01)
 
@@ -126,27 +122,31 @@ class ButtonObserver(object):
     def buttonpressed_ok(self):
         if (self.lockIt(3)):
             print("Button pressed: OK")
-            #self.ofen.autoModeAction()
+            self.ofen.autoModeAction()
             self.unlockIt(3, 1)
 
-    def DIG1Turned_temp2hold(self, change):
+    def DIGTurned_temp2hold(self, change):
+        #newVal = self.x1 + change * 5
         newVal = self.ofen.get_temp2hold() + change * 5
         #newVal = round(newVal, 2)
         if (newVal <= 0):
             newVal = 0
         self.ofen.set_temp2hold(newVal)
-        self.ofenMain.interruptActionDIG()
-        print("DIG Turned: temp2Hold, With Value:" + newVal)
+        self.ofenMain.interruptAction_DIG()
+        #self.x1 = newVal
+        print("DIG Turned: temp2Hold, With Value:" + str(newVal))
 
     def DIGTurned_drosselklappe(self, change):
+        #newVal = self.x2 + change * 0.02
         newVal = self.ofen.get_Drosselklappe() + change * 0.02
         newVal = round(newVal, 2)
         if (newVal <= 0):
             newVal = 0
 
         self.ofen.set_Drosselklappe(newVal)
-        self.ofenMain.interruptActionDIG()
-        print("DIG Turned: Drosselklappe, With Value:" + newVal)
+        self.ofenMain.interruptAction_DIG()
+        #self.x2 = newVal
+        print("DIG Turned: Drosselklappe, With Value:" + str(newVal))
 
     def get_encoder_DIG1(self):
         # liest den Encoder aus. Falls die Werte der Eingangspins
@@ -195,4 +195,8 @@ class ButtonObserver(object):
         if (result != 0):
             print(result)
         return result
+        
+#b = ButtonObserver()
+#while(True):
+#    time.sleep(10)
 

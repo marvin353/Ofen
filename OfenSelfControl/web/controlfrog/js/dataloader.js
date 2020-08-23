@@ -55,8 +55,8 @@ function loadData_Interrupt(data) {
 	parseJSONData(data);
 }
 
-eel.expose(loadData_Interrupt);
-function loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold ,errors) {
+eel.expose(loadData_Interrupt_Settings);
+function loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan ,errors) {
 	console.log("loadData_Interrupt_Settings");
 	updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, errors);
 }
