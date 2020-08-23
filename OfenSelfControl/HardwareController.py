@@ -33,7 +33,7 @@ class HardwareController:
         #Servo
         self.servoPIN = 5
         GPIO.setup(self.servoPIN, GPIO.OUT)
-        self.p = GPIO.PWM(self.servoPIN, 50) # GPIO als PWM mit 50Hz
+        self.p = GPIO.PWM(self.servoPIN, 330) # GPIO als PWM mit 50Hz
         self.p.start(2.5)
         self.SetAngle(self.p, 0)
         

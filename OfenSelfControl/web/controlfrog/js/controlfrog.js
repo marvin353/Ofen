@@ -754,8 +754,8 @@ $(document).ready(function(){
 		rZGopts.generateGradient = zones;
 		rZGopts.gradientType = "linearGradient"*/
 		let zones = [];
-		for (var i = 0; i < 800; i=i+20) {
-			zones.push({strokeStyle: colorCodeGauge(i), min: i, max: i+20})
+		for (var i = 0; i < 500; i=i+20) {
+			zones.push({strokeStyle: colorCodeGauge(i), min: i, max: i+20});
 		}			
 					
 		rZGopts.staticZones = zones;
@@ -810,7 +810,7 @@ function colorCodeGauge(temp) {
 			var HValue = 260;
 			
 			if (temp > 40) {
-				HValue = 260 - temp/2;
+				HValue = 260 - temp/1.5;
 				if (HValue < 0) {
 					HValue = 0;
 				}

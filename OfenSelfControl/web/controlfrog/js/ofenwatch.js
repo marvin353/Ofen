@@ -1,14 +1,20 @@
 //Temperature Values
 		var tempDach = -1000;  //Is the same as inside temp in backing room
 		var tempFront = -1000;
-		var tempBack = -1000;
+		var tempLeft = -1000;
+		var tempRight = -1000;
 		var tempLowerLeft = -1000;
+		var tempLowerRight = -1000;
+		var tempSteamOutput = -1000;
+		
+		var tempBack = -1000;
 		var tempLowerFront = -1000;
+		var tempStone = -1000;
+		
 		var tempLowerFrontInside = -1000;
 		var tempSteamInside = -1000;
 		var tempSteamCooler = -1000;
-		var tempSteamOutput = -1000;
-		var tempStone = -1000;
+		
 		//var windowWidth = 350;
 		//var windowHeight = 300;
 				
@@ -61,14 +67,21 @@
 			//if (obj != null) {
 				tempDach = checkForErrors(obj.temp1,1);
 				tempFront = checkForErrors(obj.temp2,2);
-				tempBack = checkForErrors(obj.temp3,3);
-				tempLowerLeft = checkForErrors(obj.temp4,4);
-				tempLowerFront = checkForErrors(obj.temp5,5);
+				tempLeft = checkForErrors(obj.temp3,3);
+				tempRight = checkForErrors(obj.temp4,4);
+				tempLowerLeft = checkForErrors(obj.temp5,5);
+				tempLowerRight = checkForErrors(obj.temp6,6);
+				tempSteamOutput = checkForErrors(obj.temp7,7);
+				
+				tempBack = checkForErrors(obj.temp8,8);
+				tempLowerFront = checkForErrors(obj.temp9,9);
+				tempStone = checkForErrors(obj.temp10,10);
+				
 				tempLowerFrontInside = checkForErrors(obj.temp6,6);
 				tempSteamInside = checkForErrors(obj.temp7,7);
 				tempSteamCooler = checkForErrors(obj.temp8,8);
-				tempSteamOutput = checkForErrors(obj.temp9,9);
-				tempStone = checkForErrors(obj.temp10,10);
+				
+	
 				
 				var drosselklappe = obj.drosselklappe * 100 + "%";
 				var srzs = obj.steamRegularizers * 100 + "%";
@@ -190,8 +203,8 @@
 		}
 		
 		function calcMaxVal(temp) {
-			newMaxVal = 800;
-			if (temp > 800) {
+			newMaxVal = 500;
+			if (temp > 500) {
 				newMaxVal = 1000;
 				if (temp > 1000) {
 					newMaxVal = 1200
@@ -357,7 +370,7 @@
 					
 					
 					//Lower Inside
-					var colorLInside = colorCode(tempLowerFrontInside);
+					/*var colorLInside = colorCode(tempLowerFrontInside);
 					bild.fillStyle = colorLInside;
 					//bild.globalAlpha=0.2;
 					bild.shadowBlur = blurval;
@@ -374,7 +387,7 @@
 					bild.lineTo( 927, 624);
 					bild.lineTo( 1022, 595);
 					bild.lineTo( 1025, 481);
-					bild.fill();
+					bild.fill();*/
 					
 					
 					//Lower Front
@@ -382,7 +395,7 @@
 					bild.fillStyle = colorLFront;
 					//bild.globalAlpha=0.2;
 					bild.shadowBlur = blurval;
-					bild.shadowColor = colorLInside;
+					bild.shadowColor = colorLFront;
 					bild.beginPath();
 					bild.moveTo( 724, 533);
 					bild.lineTo( 724, 713);
@@ -396,7 +409,7 @@
 					bild.fillStyle = colorChimney;
 					//bild.globalAlpha=0.2;
 					bild.shadowBlur = blurval;
-					bild.shadowColor = colorLInside;
+					bild.shadowColor = colorChimney;
 					bild.beginPath();
 					bild.moveTo( 775, 15);
 					
@@ -453,13 +466,13 @@
 					bild.textAlign = "center";
 					bild.strokeStyle = "grey";
 					
-					//Rückwand
-					bild.fillText(tempBack + "°C", 150, 210); 
+					//Links
+					bild.fillText(tempLeft + "°C", 150, 210); 
 					bild.strokeStyle = "lightgrey";
 					bild.beginPath();
 					bild.moveTo( 108, 220);
 					bild.lineTo( 190, 220);
-					bild.lineTo( 299, 290);
+					bild.lineTo( 330, 300);
 					bild.lineWidth = 3;
 					bild.stroke();
 					
@@ -502,11 +515,29 @@
 					bild.stroke();
 					
 					//Vorderwand unten
-					bild.fillText(tempLowerFront + "°C", 1145, 670);
+					/*bild.fillText(tempLowerFront + "°C", 1145, 670);
 					bild.beginPath();
 					bild.moveTo( 1190, 680);
 					bild.lineTo( 1070, 680);
 					bild.lineTo( 910, 590);
+					bild.lineWidth = 3;
+					bild.stroke();*/
+					
+					//Rechts oben
+					bild.fillText(tempRight + "°C", 1200, 410);
+					bild.beginPath();
+					bild.moveTo( 1250, 420);
+					bild.lineTo( 1120, 420);
+					bild.lineTo( 930, 360);
+					bild.lineWidth = 3;
+					bild.stroke();
+					
+					//Rechts unten
+					bild.fillText(tempLowerRight + "°C", 1145, 670);
+					bild.beginPath();
+					bild.moveTo( 1190, 680);
+					bild.lineTo( 1070, 680);
+					bild.lineTo( 950, 520);
 					bild.lineWidth = 3;
 					bild.stroke();
 					
@@ -583,7 +614,7 @@
 			var HValue = 260;
 			
 			if (temp > 40) {
-				HValue = 260 - temp/2;
+				HValue = 260 - temp/1.5;
 				if (HValue < 0) {
 					HValue = 0;
 				}
