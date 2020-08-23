@@ -63,7 +63,7 @@ class LocalDataStorage(object):
         now = datetime.now()
         date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
         automode = self.ofen.get_autoMode()
-        predictedTemps = [-999,-999,-999]
+        predictedTemps = [0,0,0]
 
         #ofenid = self.ofen.get_ofenid()
         #temps = [11,12,13,14,15,16,17]

@@ -71,7 +71,7 @@ class OfenMainn(object):
         while(self.ofen.isOnline):
             self.localDataStorage.appendData()
             data = self.localDataStorage.getDataAsJson()
-            #self.serverMessenger.uploadData(data)
+            self.serverMessenger.uploadData()
             time.sleep(5)
 
     def interruptAction(self):
@@ -117,16 +117,23 @@ class OfenMainn(object):
 #print("by")
 
 if __name__ == '__main__':
+
+    finished = False
+
     try:
         print("Starting with main...")
     #ofen = Ofen(1)
     #ofen.set_temp2hold(400)
 
         main = OfenMainn()
-        while(True):
+        while(not finished):
             print("main loop")
+            if (finished):
+                sys.exit()
             time.sleep(10)
     except:
         print("Perform Shutdown")
+        finished = True
 
         main.onShutdown_test()
+        #raise KeyboardInterrupt
