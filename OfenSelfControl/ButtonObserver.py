@@ -67,7 +67,7 @@ class ButtonObserver(object):
                 self.buttonpressed_autoMode()
                 time.sleep(0.1)
             if (self.pi.read(self.pin_btn_white_2) == 0):
-                self.buttonpressed_ok()
+                self.buttonpressed_fan()
                 time.sleep(0.1)
 
             change = self.get_encoder_DIG1()
@@ -118,10 +118,10 @@ class ButtonObserver(object):
             self.ofenMain.interruptAction()
             self.unlockIt(2, 1)
 
-    def buttonpressed_ok(self):
+    def buttonpressed_fan(self):
         if (self.lockIt(3)):
-            print("Button pressed: OK")
-            #self.ofen.autoModeAction()
+            print("Button pressed: Fan")
+            self.ofen.fanAction()
             self.ofenMain.interruptAction()
             self.unlockIt(3, 1)
 

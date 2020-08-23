@@ -130,6 +130,12 @@ class Ofen:
         if (not self.isSimulation):
             self.hardwareController.turnFanOff()
         print("Fan: 0%")
+        
+    def fanAction(self):
+        if(self.fan == 0.0):
+            self.activateFan()
+        else:
+            self.stopFan()
 
     def get_FanValue(self):
         return self.fan
