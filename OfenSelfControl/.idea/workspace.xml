@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HardwareController.py" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testNotebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/testNotebook.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/controlfrog.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/controlfrog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/dataloader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServerMessenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ServerMessenger.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HardwareController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="480">
               <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
             </state>
           </provider>
@@ -83,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-476">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+            <state relative-caret-position="109">
+              <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -149,9 +144,9 @@
         <option value="$PROJECT_DIR$/PiArduinoComunicator.py" />
         <option value="$PROJECT_DIR$/ButtonObserver.py" />
         <option value="$PROJECT_DIR$/LocalDataStorage.py" />
-        <option value="$PROJECT_DIR$/ServerMessenger.py" />
         <option value="$PROJECT_DIR$/OfenMain.py" />
         <option value="$PROJECT_DIR$/HardwareController.py" />
+        <option value="$PROJECT_DIR$/ServerMessenger.py" />
       </list>
     </option>
   </component>
@@ -345,12 +340,12 @@
       <workItem from="1591706066073" duration="15686000" />
       <workItem from="1592471090164" duration="1000" />
       <workItem from="1593939688248" duration="55176000" />
-      <workItem from="1596747905917" duration="31454000" />
+      <workItem from="1596747905917" duration="31954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143867000" />
+    <option name="totallyTimeSpent" value="144367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -507,16 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiArduinoComunicator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-401">
@@ -552,8 +537,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HardwareController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="480">
           <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

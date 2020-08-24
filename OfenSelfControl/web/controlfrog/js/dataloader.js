@@ -1,5 +1,5 @@
 var intervalID ;
-var url = "http://ofenwatch.woller.pizza/yamifood/php/ofenwatch/get_data.php";
+var url = "http://ofenwatch.woller.pizza/php/ofenwatch/get_data.php";
 
 var i = 0;
 var local = true; //Set this value depending on the running environment of this script 

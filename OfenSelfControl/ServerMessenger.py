@@ -84,7 +84,7 @@ class ServerMessenger:
 
 
 # defining the api-endpoint
-API_ENDPOINT = "http://ofenwatch.woller.pizza/yamifood/php/ofenwatch/process_incoming_data.php"
+API_ENDPOINT = "http://ofenwatch.woller.pizza/php/ofenwatch/process_incoming_data.php"
 
 # your API key here
 API_KEY = "XXXXXXXXXXXXXXXXX"
