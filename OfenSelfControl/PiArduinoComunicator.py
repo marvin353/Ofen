@@ -53,10 +53,13 @@ class PiArduinoCommunicator:
 
             for idx, strPart in enumerate(strParts):
                 tempParts = re.split(":",strPart)
-                if tempParts[1].isdigit():
+                if True:#tempParts[1].isdigit():
                     try:
-                        print(tempParts[1])
-                        values[idx] = int(tempParts[1])
+                        #print(tempParts[1])
+                        a = float(tempParts[1])
+                        print(int(a))
+                        values[idx] = int(a)
+                        self.error = {"error":False, "message":"none"}
                     except:
                         msg = "TemperatureStringParsingException INT CAST: Please check serial connection and temperature sensors "
                         print(msg)
