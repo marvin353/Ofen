@@ -2,7 +2,7 @@ var intervalID ;
 var url = "http://ofenwatch.woller.pizza/php/ofenwatch/get_data.php";
 
 var i = 0;
-var local = false; //Set this value depending on the running environment of this script 
+var local = true; //Set this value depending on the running environment of this script 
 
 function init() {
 	if (!local) {
@@ -48,14 +48,14 @@ function loadData() {
 } 
 
 //Use this on local Ofen-client, get data directly from PI source, don't access remote DB
-//eel.expose(loadData_Interrupt);
+eel.expose(loadData_Interrupt);
 function loadData_Interrupt(data) {
 	console.log("loadData_Interrupt Data:");
 	console.log(data);
 	parseJSONData(data);
 }
 
-//eel.expose(loadData_Interrupt_Settings);
+eel.expose(loadData_Interrupt_Settings);
 function loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan ,errors) {
 	console.log("loadData_Interrupt_Settings");
 	updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, errors);

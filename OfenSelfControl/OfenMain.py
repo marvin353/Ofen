@@ -7,6 +7,7 @@ import threading
 from ServerMessenger import ServerMessenger
 from LocalDataStorage import LocalDataStorage
 import sys
+import os
 from ButtonObserver import ButtonObserver
 
 
@@ -25,7 +26,7 @@ class OfenMainn(object):
         self.ofen.set_temp2hold(300)
 
         self.gui = Gui2(self.ofen)
-        self.serverMessenger = ServerMessenger(self.ofen)
+        self.serverMessenger = ServerMessenger(self.ofen) #TODO: Catch http execption if no connection to inet and turn to local monly mode
         self.localDataStorage = LocalDataStorage(self.ofen)
 
         if (not self.isSimulation):
@@ -105,6 +106,7 @@ class OfenMainn(object):
         self.t2.join()
         print("end reached2")
         sys.exit("Exit programm finally")
+        os.system("shutdown now -h")
 
 
 
