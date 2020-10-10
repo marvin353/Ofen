@@ -56,17 +56,17 @@ class PiArduinoCommunicator:
                 if True:#tempParts[1].isdigit():
                     try:
                         #print(tempParts[1])
-						if(tempParts[1].lower() == "nan"):
-							msg = "TemperatureStringParsingException NO DIGIT (NAN): Please check serial connection and temperature sensors "
-							print(msg)
-							self.error["error"] = True
-							self.error["message"] = msg
-							values[idx] = 0
-						else:
-							a = float(tempParts[1])
-							print(int(a))
-							values[idx] = int(a)
-							self.error = {"error":False, "message":"none"}
+                        if(tempParts[1].lower() == "nan"):
+                            msg = "TemperatureStringParsingException NO DIGIT (NAN): Please check serial connection and temperature sensors "
+                            print(msg)
+                            self.error["error"] = True
+                            self.error["message"] = msg
+                            values[idx] = 0
+                        else:
+                            a = float(tempParts[1])
+                            print(int(a))
+                            values[idx] = int(a)
+                            self.error = {"error":False, "message":"none"}
                     except:
                         msg = "TemperatureStringParsingException INT CAST: Please check serial connection and temperature sensors "
                         print(msg)
