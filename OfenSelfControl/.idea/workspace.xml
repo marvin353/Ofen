@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PiArduinoComunicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiArduinoComunicator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +16,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ofen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
+            <state relative-caret-position="3225">
               <caret line="220" selection-start-line="220" selection-end-line="220" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -27,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OfenMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
+            <state relative-caret-position="1950">
               <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -48,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiArduinoComunicator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
+            <state relative-caret-position="525">
+              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -69,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gui2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="735">
               <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
               <folding>
                 <element signature="e#198#208#0" expanded="true" />
@@ -81,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="135">
+              <caret line="14" column="89" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="89" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -93,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
+            <state relative-caret-position="945">
               <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -151,7 +152,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="714" />
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -160,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,7 +173,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,12 +341,14 @@
       <workItem from="1591706066073" duration="15686000" />
       <workItem from="1592471090164" duration="1000" />
       <workItem from="1593939688248" duration="55176000" />
-      <workItem from="1596747905917" duration="34954000" />
+      <workItem from="1596747905917" duration="35093000" />
+      <workItem from="1598553496095" duration="1237000" />
+      <workItem from="1602893302072" duration="342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147367000" />
+    <option name="totallyTimeSpent" value="149085000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,12 +363,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13733906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14020029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23373494" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23373494" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,13 +434,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eeltestexpose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="34" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/eeltestexpose.py" />
     <entry file="file://$PROJECT_DIR$/ButtonObserver2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-997">
@@ -454,16 +451,6 @@
           <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gui2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding>
-            <element signature="e#198#208#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -485,30 +472,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploadData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" selection-start-line="1" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ofen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
+        <state relative-caret-position="3225">
           <caret line="220" selection-start-line="220" selection-end-line="220" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OfenMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploadData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="1" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -519,33 +506,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testNotebook.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
+    <entry file="file://$PROJECT_DIR$/Gui2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="e#198#208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="135">
+          <caret line="14" column="89" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="89" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfenMain.py">
+    <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+        <state relative-caret-position="945">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testNotebook.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/PiArduinoComunicator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
+        <state relative-caret-position="525">
+          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

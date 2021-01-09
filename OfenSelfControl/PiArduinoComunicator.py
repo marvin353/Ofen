@@ -19,6 +19,7 @@ class PiArduinoCommunicator:
 
         self.values = [0, 0, 0, 0, 0, 0, 0]
         self.error = {"error":False, "message":"none"}
+        self.oldvalues = [0, 0, 0, 0, 0, 0, 0]
 
         self.t1 = threading.Thread(target=self.readFromSerialLoop, args=())
         self.t1.start()
@@ -61,11 +62,12 @@ class PiArduinoCommunicator:
 							print(msg)
 							self.error["error"] = True
 							self.error["message"] = msg
-							values[idx] = 0
+							values[idx] = self.oldvalues[idx]
 						else:
 							a = float(tempParts[1])
-							print(int(a))
-							values[idx] = int(a)
+							b = int(a)
+							values[idx] = b
+                            self.oldvalues[idx] = b
 							self.error = {"error":False, "message":"none"}
                     except:
                         msg = "TemperatureStringParsingException INT CAST: Please check serial connection and temperature sensors "
