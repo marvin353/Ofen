@@ -46,6 +46,7 @@ class PiArduinoCommunicator:
             #stri = re.sub("\\r\\n'", "", stri)
             stri = stri[2:]
             stri = stri[:-5]
+            stri = stri.replace(" ","")
             print("REgexed3: " + stri)
 
             strParts = re.split("-",stri)
@@ -70,7 +71,7 @@ class PiArduinoCommunicator:
 							self.error = {"error":False, "message":"none"}
                     except:
                         msg = "TemperatureStringParsingException INT CAST: Please check serial connection and temperature sensors "
-                        print(msg + )
+                        print(msg + tempParts[1])
                         self.error["error"] = True
                         self.error["message"] = msg
                 else:
