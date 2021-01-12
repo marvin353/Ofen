@@ -37,35 +37,39 @@ class PiArduinoCommunicator2:
             
             if "D" in striL:
                 strParts = re.split("-",striL)
-                strVal = strParts[1]
-                value = float(strVal[:3])
+                value = round(float(strParts[-1]),1)
                 print("D")
                 print(value)
             elif "G" in striL:
                 strParts = re.split("-",striL)
-                value = float(strParts[1])
+                value = round(float(strParts[-1]),1)
                 print("G")
                 print(value)
             elif "L" in striL:
                 strParts = re.split("-",striL)
-                value = float(strParts[1])
+                value = round(float(strParts[-1]),1)
                 print("L")
                 print(value)
             elif "A" in striL:
                 strParts = re.split("-",striL)
-                value = float(strParts[1])
+                value = round(float(strParts[-1]),1)
                 print("A")
                 print(value)
             elif "F" in striL:
                 strParts = re.split("-",striL)
-                value = float(strParts[1])
+                value = round(float(strParts[-1]),1)
                 print("F")
+                print(value)
+            elif "H" in striL:
+                strParts = re.split("-",striL)
+                value = round(float(strParts[-1]),1)
+                print("H")
                 print(value)
             elif "T:" in striL:
                 strParts = re.split(":",striL)
-                print(strParts[1])
+                #print(strParts[1])
                 self.processTempString(strParts[1])
-            else :
+            else:
                 msg = "TempSet-StringParsingError:NO MATCH Please check serial connection"
                 print(msg)
                 self.error["error"] = True
@@ -77,6 +81,12 @@ class PiArduinoCommunicator2:
             print(e)
             self.error["error"] = True
             self.error["message"] = msg
+            
+    #def processSettingsString(self, stri):
+      #  strParts = re.split("-",striL)
+      #  value = float(strParts[1])
+       #         print("F")
+       #         print(value)
 
     def processTempString(self,stri):
         error = 0
@@ -84,7 +94,7 @@ class PiArduinoCommunicator2:
 
         #str = "NAN-NAN-NAN-NAN-NAN-NAN-NAN"
 
-        print("REgexed0: " + str(stri))
+        print("Temperatures: " + str(stri))
         
         try:
             #stri = str(stri)
@@ -95,8 +105,8 @@ class PiArduinoCommunicator2:
             
             #stri = stri[2:]
             #stri = stri[:-5]
-            stri = stri.replace(" ","")
-            print("REgexed3: " + stri)
+            #stri = stri.replace(" ","")
+            #print("REgexed3: " + stri)
 
             strParts = re.split("-",stri)
             #for strPart in strParts:
@@ -113,7 +123,7 @@ class PiArduinoCommunicator2:
                             values[idx] = 0
                         else:
                             a = float(strPart)
-                            print(int(a))
+                            #print(int(a))
                             values[idx] = int(a)
                             self.error = {"error":False, "message":"none"}
                     except:
