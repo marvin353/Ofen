@@ -13,6 +13,8 @@ class LocalDataStorage(object):
         #self.conn = sqlite3.connect('OfenLocalDB2.db')
         #self.connect2db()
 
+        self.cleanDb()
+
     def connect2db(self):
         conn = sqlite3.connect('OfenLocalDB2.db')
         conn.row_factory = self.dict_factory
