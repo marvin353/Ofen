@@ -162,8 +162,9 @@ void loop() {
     // G Gebläse
     // A Automode
     // F Fastheatup
+    // H temp2hold
     
-    if (sub == "D" || sub == "A" || sub == "F" || sub == "G" || sub == "L") {
+    if (sub == "D" || sub == "A" || sub == "F" || sub == "G" || sub == "L" || sub == "H") {
       Serial.println(s) ;
     }
   }

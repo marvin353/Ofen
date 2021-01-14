@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/HardwareController.py" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiArduinoComunicator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiArduinoComunicator2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/controlfrog/js/ofenwatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ofen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ofen.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,34 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ofen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="199">
+              <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-554">
-              <caret line="91" column="15" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ButtonObserver2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-974">
-              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-              <folding>
-                <element signature="e#23#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,18 +59,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1837">
-              <caret line="141" column="13" lean-forward="true" selection-start-line="104" selection-end-line="141" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gui2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-205">
@@ -106,22 +71,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1419">
-              <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
+            <state relative-caret-position="1311">
+              <caret line="139" column="53" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -166,7 +119,6 @@
         <option value="$PROJECT_DIR$/PiArduinoComunicator.py" />
         <option value="$PROJECT_DIR$/ButtonObserver.py" />
         <option value="$PROJECT_DIR$/OfenMain.py" />
-        <option value="$PROJECT_DIR$/Ofen.py" />
         <option value="$PROJECT_DIR$/LocalDataStorage.py" />
         <option value="$PROJECT_DIR$/OfenTempAnalyzer.py" />
         <option value="$PROJECT_DIR$/testNb2.ipynb" />
@@ -174,6 +126,7 @@
         <option value="$PROJECT_DIR$/Gui2.py" />
         <option value="$PROJECT_DIR$/HardwareController.py" />
         <option value="$PROJECT_DIR$/PiArduinoComunicator2.py" />
+        <option value="$PROJECT_DIR$/Ofen.py" />
       </list>
     </option>
   </component>
@@ -381,12 +334,12 @@
       <workItem from="1596747905917" duration="35093000" />
       <workItem from="1598553496095" duration="1237000" />
       <workItem from="1602893302072" duration="342000" />
-      <workItem from="1610359058515" duration="15070000" />
+      <workItem from="1610359058515" duration="15640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164155000" />
+    <option name="totallyTimeSpent" value="164725000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,16 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ofen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ButtonObserver2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-974">
@@ -591,10 +534,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
+        <state relative-caret-position="1311">
+          <caret line="139" column="53" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ofen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

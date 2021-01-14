@@ -95,12 +95,16 @@ class Ofen:
     def fastHeatUpAction(self):
         if (self.isFastHeatUpActive == 0.0):
             self.set_Drosselklappe(1.0)
-            self.activateFan()
+            self.fan = 0.0
+            self.fanAction()
+            self.set_airInput(1.0)
             self.isFastHeatUpActive = 1.0
             print("Fast heat up mode active")
         else:
             self.set_Drosselklappe(0.5)
-            self.stopFan()
+            self.fan = 1.0
+            self.fanAction()
+            self.set_airInput(0.5)
             self.isFastHeatUpActive = 0.0
             print("Fast heat up mode stopped")
 
