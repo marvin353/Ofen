@@ -34,7 +34,7 @@ class Ofen:
             self.t1.start()
 
         self.tempAnalyzer = OfenTempAnalyzer(self)
-        #self.tempAnalyzer.activateAutonomousMode()
+        #self.tempAnalyzer.activateAutoMode()
 
 
 
@@ -108,13 +108,13 @@ class Ofen:
         return self.isFastHeatUpActive
 
     def autoModeAction(self):
-        if(self.tempAnalyzer.get_AutonomousModeState()):
-            self.tempAnalyzer.deactivateAutonomousMode()
+        if(self.tempAnalyzer.get_AutoModeState()):
+            self.tempAnalyzer.deactivateAutoMode()
         else:
-            self.tempAnalyzer.activateAutonomousMode()
+            self.tempAnalyzer.activateAutoMode()
 
     def get_autoMode(self):
-        return self.tempAnalyzer.get_AutonomousModeState()
+        return self.tempAnalyzer.get_AutoModeState()
 
     def set_temp2hold(self, a):
         self.temp2hold = a

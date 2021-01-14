@@ -55,7 +55,7 @@ class LocalDataStorage(object):
         ofenid = self.ofen.get_ofenid()
         temps = self.ofen.get_currentTempsArray()
         drosselklappe = self.ofen.get_Drosselklappe()
-        airInput = self.ofen.get
+        airInput = self.ofen.get_airInput()
         fan = self.ofen.get_FanValue()
         fastHeatup = self.ofen.get_FastHeatupValue()
         temp2hold = self.ofen.get_temp2hold()
@@ -71,10 +71,10 @@ class LocalDataStorage(object):
        # c.execute("INSERT INTO Records VALUES (NULL, ofenid, temps[0], temps[1], temps[2], temps[3], temps[4], temps[5], temps[6], temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, date_time)")
 
         sqlite_insert_with_param = """INSERT INTO Records
-                                  (id, ofenid, temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp8, temp9, temp10, temp2hold, drosselklappe, fan, steamRegularizers, fastHeatupActive, automode, timestamp) 
+                                  (id, ofenid, temp1, temp2, temp3, temp4, temp5, temp6, temp7, temp8, temp9, temp10, temp2hold, drosselklappe, fan, airInput, fastHeatupActive, automode, timestamp) 
                                   VALUES (NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
 
-        data_tuple = (ofenid, int(temps[0]), int(temps[1]), int(temps[2]), int(temps[3]), int(temps[4]), int(temps[5]), int(temps[6]), int(predictedTemps[0]), int(predictedTemps[1]), int(predictedTemps[2]),temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, automode, date_time)
+        data_tuple = (ofenid, int(temps[0]), int(temps[1]), int(temps[2]), int(temps[3]), int(temps[4]), int(temps[5]), int(temps[6]), int(predictedTemps[0]), int(predictedTemps[1]), int(predictedTemps[2]),temp2hold, drosselklappe, fan, airInput, fastHeatup, automode, date_time)
         c.execute(sqlite_insert_with_param, data_tuple)
 
         # Save (commit) the changes

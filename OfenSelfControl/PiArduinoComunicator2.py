@@ -1,7 +1,6 @@
 import serial
 import re
 import threading
-from Ofen import Ofen
 
 class PiArduinoCommunicator2:
 
@@ -61,7 +60,7 @@ class PiArduinoCommunicator2:
             elif "F" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
-                if not self.ofen.get_FastHeatupValue() == value
+                if not self.ofen.get_FastHeatupValue() == value:
                     self.ofen.fastHeatUpAction()
                 print("F")
                 print(value)
