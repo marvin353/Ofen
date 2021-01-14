@@ -1,4 +1,3 @@
-from PiArduinoComunicator2 import PiArduinoCommunicator2
 import RPi.GPIO as GPIO
 import time
 from DRV8825 import DRV8825
@@ -9,10 +8,10 @@ class HardwareController:
         print("HardwareController initialized")
         self.ofen = ofen
 
-        self.arduinoComm = PiArduinoCommunicator2(ofen)
-
         self.currentValue1 = 0.0
+        self.currentValue2 = 0.0
         self.currentStep1 = 0
+        self.currentStep2 = 0
         self.motor1running = False
         self.motor2running = False
        

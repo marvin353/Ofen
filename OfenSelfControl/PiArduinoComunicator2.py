@@ -131,11 +131,14 @@ class PiArduinoCommunicator2:
 
     def readFromSerialLoop(self):
         while True:
-            read_ser=self.ser.readline()
+            try:
+                read_ser=self.ser.readline()
             #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
             #read_ser = self.ser.readline().decode('utf-8').rstrip()
-
-            self.decideTempOrSettings(read_ser)
+                self.decideTempOrSettings(read_ser)
+            except:
+                print("Serial Connection ERROR")
+                self.ofen.setTempData([0,0,0,0,0,0,0])
 
     def write2Serial_woodWarning(self):
         print("Write 2 Serial")

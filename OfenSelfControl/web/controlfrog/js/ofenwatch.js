@@ -275,7 +275,7 @@
 				var blurval = 0;
 				
 				var background = new Image();
-				background.src = "../../img/Ofen/OfenPic3.png";
+				background.src = "img/Ofen/OfenPic3.png";
 				// Make sure the image is loaded first otherwise nothing will draw.
 				background.onload = function() {
 					bild.fillStyle = "rgba(0,0,0,1)";
