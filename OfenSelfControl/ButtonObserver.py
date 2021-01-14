@@ -46,8 +46,8 @@ class ButtonObserver(object):
         GPIO.setup(self.pin1_dig2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.pin2_dig2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-        self.locks = [0,0,0,0,0,0] #red,      green , white1,   white2, dig1,      dig2
-#                                  #shutdown, SRZs,   Autopilot, ka   , temp2hold, drosselklappe(/luft)
+        self.locks = [0,0,0,0,0,0] #red,      green, white1,   white2, dig1,      dig2
+#                                  #shutdown, SRZs,  Automode, ka,     temp2hold, drosselklappe(/luft)
 
         self.shutdownRequest = False
 

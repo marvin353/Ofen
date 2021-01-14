@@ -41,11 +41,8 @@ class OfenTempAnalyzer:
     DROSSELKLAPPE_STEP_VALUE_RISE = 1.33
     DROSSELKLAPPE_STEP_VALUE_COOLDOWN = 0.75
 
-
     temp2hold = -1000
     arrayLength = 20
-
-
 
     def __init__(self,ofen):
         self.ofen = ofen
@@ -53,37 +50,30 @@ class OfenTempAnalyzer:
         self.currentDrosselStep = 0
 
         #fan = 0.0
-        #steamRegularizers = 0.0
-        self.autonomousMode = False
+        #airInput = 0.0
+        self.autoMode = True
         self.t1 = threading.Thread(target=self.regularizeTask, args=())
 
 
 
 
 
-
-
-   # def get_a(self):
-        #return self.__a
-
-    ## setter method to change the value 'a' using an object
-
-    def activateAutonomousMode(self):
-        print("Starting autonomous Mode")
-        self.autonomousMode = True
+    def activateAutoMode(self):
+        print("Starting Auto Mode")
+        self.autoMode = True
         self.t1.start()
 
-    def deactivateAutonomousMode(self):
-        print("Stopping autonomous Mode")
-        self.autonomousMode = False
+    def deactivateAutoMode(self):
+        print("Stopping Auto Mode")
+        self.autoMode = False
         self.t1.join()
 
-    def get_AutonomousModeState(self):
-        return self.autonomousMode
+    def get_AutoModeState(self):
+        return self.autoMode
 
     def regularizeTask(self):
 
-        while self.autonomousMode:
+        while self.autoMode:
             print("Loop: regularizeTask")
             #a = self.ofen.get_a()
 

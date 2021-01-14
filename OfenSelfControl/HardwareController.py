@@ -1,5 +1,4 @@
-#from Ofen import Ofen
-from PiArduinoComunicator import PiArduinoCommunicator
+from PiArduinoComunicator2 import PiArduinoCommunicator2
 import RPi.GPIO as GPIO
 import time
 from DRV8825 import DRV8825
@@ -10,7 +9,7 @@ class HardwareController:
         print("HardwareController initialized")
         self.ofen = ofen
 
-        self.arduinoComm = PiArduinoCommunicator(ofen)
+        self.arduinoComm = PiArduinoCommunicator2(ofen)
 
         self.currentValue1 = 0.0
         self.currentStep1 = 0
@@ -46,17 +45,6 @@ class HardwareController:
     def turnFanOff(self):
         print("Turn Relais OFF: Deactivate Fan")
         GPIO.output(self.RELAIS_1_GPIO, GPIO.LOW)
-
-
-    def moveSteamRegularizersUp(self):
-        print("Move Servo: SRZs up")
-        #self.moveValueSRZs(self, self.Motor2, 1.0)
-        self.SetAngle(self.p, 160)
-
-    def moveSteamRegularizersDown(self):
-        print("Move Servo: SRZs down")
-        #self.moveValueSRZs(self, self.Motor2, 0.0)
-        self.SetAngle(self.p, 0)
       
     def moveDrosselklappeStepper(self, value):
         print("Move Stepper: Drosselklappe")
@@ -66,24 +54,17 @@ class HardwareController:
             while (self.motor1running):
                 print("Wait for Motor1 (Drosselklappe) to stop")
                 time.sleep(1)
-            self.moveDrosselklappe(value)
+            self.moveDrosselklappeStepper(value)
 
     def moveAirInputStepper(self, value):
         print("Move Stepper: Air Input")
-
-    def readTempDataFromArduino(self):
-
-       # temps = [-1000,-1000,-1000,-1000,-1000,-1000,-1000]
-
-        error = self.arduinoComm.get_error()
-
-        if(error["error"]):
-            self.ofen.triggerAlert("sensor_error", error["message"])
-            return [0,0,0,0,0,0,0]
-
-        temps = self.arduinoComm.get_values()
-
-        return temps
+        if (not self.motor2running):
+            self.moveValueAirInput(self.Motor2, value)
+        else:
+            while (self.motor2running):
+                print("Wait for Motor2 (Air Input) to stop")
+                time.sleep(1)
+            self.moveAirInputStepper(value)
 
 
 
@@ -117,6 +98,38 @@ class HardwareController:
         self.motor1running = False
 
 
+    def moveValueAirInput(self, motor, newValue):
+
+        self.motor2running = True
+        print("\nMotor move to value: " + str(newValue) + ", Current Value/Step: " + str(self.currentValue2) + " / " + str(
+            self.currentStep2))
+
+        motor.SetMicroStep('hardward', 'fullstep')
+        motorDirection = 'forward'
+        value2move = 0
+
+        if (newValue > self.currentValue2):
+            motorDirection = 'forward'
+            value2move = int(1600 * newValue) - self.currentStep2
+            self.currentStep2 = self.currentStep2 + value2move
+        elif (newValue < self.currentValue2):
+            motorDirection = 'backward'
+            value2move = (int(1600 * newValue) - self.currentStep2) * (-1)
+            self.currentStep2 = self.currentStep2 - value2move
+        else:
+            print("Keep Value (Drosselklappe)")
+
+        self.currentValue2 = newValue
+        motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.001)
+        motor.Stop()
+        self.motor2running = False
+
+
+
+
+
+
+    ############################################## Servo (Not included) #################################################
     def moveValueSRZs(self, motor, newValue):
 
         self.motor2running = True

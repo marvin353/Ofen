@@ -1,22 +1,18 @@
 import serial
-import RPi.GPIO as GPIO
-import time
 import re
-#from Ofen import Ofen
 import threading
-#from HardwareController import HardwareController
+from Ofen import Ofen
 
 class PiArduinoCommunicator2:
 
-    def __init__(self):
+    def __init__(self, ofen):
         print("PiArduinoCommunicator2 initialized")
 
-        #self.ofen = ofen
+        self.ofen = ofen
 
         self.ser = serial.Serial("/dev/ttyACM0", 9600)  # change ACM number as found from ls /dev/tty/ACM*
         self.ser.baudrate = 9600
 
-        self.values = [0, 0, 0, 0, 0, 0, 0]
         self.error = {"error":False, "message":"none"}
 
         self.t1 = threading.Thread(target=self.readFromSerialLoop, args=())
@@ -25,9 +21,6 @@ class PiArduinoCommunicator2:
     def get_error(self):
         return self.error
 
-    def get_values(self):
-        return self.values
-        
     def decideTempOrSettings(self,stri): 
         try:
             striL = str(stri)
@@ -38,31 +31,44 @@ class PiArduinoCommunicator2:
             if "D" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                self.ofen.set_Drosselklappe(value)
                 print("D")
                 print(value)
             elif "G" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                if value >= 0.5:
+                    value = 1.0
+                else:
+                    value = 0.0
+                if not self.ofen.get_FanValue() == value:
+                    self.ofen.fanAction()
                 print("G")
                 print(value)
             elif "L" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                self.ofen.set_airInput(value)
                 print("L")
                 print(value)
             elif "A" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                if not self.ofen.get_autoMode() == value:
+                    self.ofen.autoModeAction()
                 print("A")
                 print(value)
             elif "F" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                if not self.ofen.get_FastHeatupValue() == value
+                    self.ofen.fastHeatUpAction()
                 print("F")
                 print(value)
             elif "H" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
+                self.ofen.set_temp2hold(value)
                 print("H")
                 print(value)
             elif "T:" in striL:
@@ -81,12 +87,7 @@ class PiArduinoCommunicator2:
             print(e)
             self.error["error"] = True
             self.error["message"] = msg
-            
-    #def processSettingsString(self, stri):
-      #  strParts = re.split("-",striL)
-      #  value = float(strParts[1])
-       #         print("F")
-       #         print(value)
+
 
     def processTempString(self,stri):
         error = 0
@@ -97,24 +98,11 @@ class PiArduinoCommunicator2:
         print("Temperatures: " + str(stri))
         
         try:
-            #stri = str(stri)
-            #print("REgexed1: " + stri)
-            #stri = re.sub("b'", "", stri)
-            #print("REgexed2: " + stri)
-            #stri = re.sub("\\r\\n'", "", stri)
-            
-            #stri = stri[2:]
-            #stri = stri[:-5]
-            #stri = stri.replace(" ","")
-            #print("REgexed3: " + stri)
 
             strParts = re.split("-",stri)
-            #for strPart in strParts:
-                #print(strPart)
 
             for idx, strPart in enumerate(strParts):
                     try:
-                        #print(tempParts[1])
                         if(strPart.lower() == "nan"):
                             msg = "TemperatureStringParsingException NO DIGIT (NAN): Please check serial connection and temperature sensors "
                             print(msg)
@@ -131,21 +119,33 @@ class PiArduinoCommunicator2:
                         print(msg + strPart)
                         self.error["error"] = True
                         self.error["message"] = msg
+                        values[idx] = 0
         except Exception as e:
             msg = "TemperatureStringParsingException: Please check serial connection and temperature sensors "
             print(msg)
             self.error["error"] = True
             self.error["message"] = msg
+            values = [0,0,0,0,0,0,0]
 
-        self.values = values
+        self.ofen.setTempData(values)
 
     def readFromSerialLoop(self):
         while True:
             read_ser=self.ser.readline()
-            #print(read_ser)
+            #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
+            #read_ser = self.ser.readline().decode('utf-8').rstrip()
+
             self.decideTempOrSettings(read_ser)
+
+    def write2Serial_woodWarning(self):
+        print("Write 2 Serial")
+        self.ser.write("wood\n".encode('utf-8'))
+
+    def write2Serial_errorWarning(self):
+        print("Write 2 Serial")
+        self.ser.write("error\n".encode('utf-8'))
 
     def onShutdown(self):
         self.t1.join()
         
-main = PiArduinoCommunicator2()
+#main = PiArduinoCommunicator2()

@@ -35,7 +35,6 @@ class OfenMainn(object):
         self.isLoggedIn = False
         self.isLoggedIn = self.serverMessenger.logIn()
 
-
         #Start thrads
         print("Start Thread for DB and GUI")
         self.t0 = threading.Thread(target=self.makeGUIThread, args=())
@@ -48,8 +47,6 @@ class OfenMainn(object):
         self.t2.start()
 
 
-
-    #def initializeOfen(self):
 
     def makeGUIThread(self):
        self.gui.startGUI(self)
@@ -86,7 +83,6 @@ class OfenMainn(object):
         self.gui.updateView_Settings()
         #self.serverMessenger.uploadData()
 
-
     def onLaunch(self):
         print("Launching")
         self.serverMessenger.sendOnlineSignal()
@@ -111,12 +107,6 @@ class OfenMainn(object):
 
 
 
-#if __name__ == '__main__':
-#m = OfenMainn()
-#time.sleep(3)
-#print("checkpoinz")
-#time.sleep(3)
-#print("by")
 
 if __name__ == '__main__':
 

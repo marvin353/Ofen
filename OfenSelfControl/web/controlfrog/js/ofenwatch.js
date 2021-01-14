@@ -84,14 +84,13 @@
 	
 				
 				var drosselklappe = obj.drosselklappe * 100 + "%";
-				var srzs = obj.steamRegularizers * 100 + "%";
 				var fastheatup = "---";
 				if (obj.fastHeatupActive == 1) {
 					fastheatup = "AN";
 				} else {
 					fastheatup = "AUS";
 				}
-				var air = "---";
+				var air = obj.airInput * 100 + "%";
 				var automode = "---";
 				if (obj.automode == 1) {
 					automode = "AN";
@@ -104,7 +103,7 @@
 				
 			//}
 			
-			updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan, errors);
+			updateCurrentSettingValues(drosselklappe, air, automode, fastheatup, temp2hold, fan, errors);
 			
 			//Draw ofen thermogram
 			zeichne(0);
@@ -132,9 +131,8 @@
 			
 		}
 		
-		function updateCurrentSettingValues(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan, errors) {
+		function updateCurrentSettingValues(drosselklappe, air, automode, fastheatup, temp2hold, fan, errors) {
 			var drosselklappeVar = document.getElementById("drosselklappe");
-			var srzVar = document.getElementById("srz");
 			var airVar = document.getElementById("lufteinlass");
 			var automodeVar = document.getElementById("automode");
 			var fastheatupVar = document.getElementById("fastheatup");
@@ -142,7 +140,6 @@
 			var fanVar = document.getElementById("fan");
 			
 			drosselklappeVar.innerHTML = drosselklappe;
-			srzVar.innerHTML = srzs;
 			airVar.innerHTML = air;
 			automodeVar.innerHTML = automode;
 			fastheatupVar.innerHTML = fastheatup;

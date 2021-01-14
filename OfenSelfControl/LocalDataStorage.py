@@ -10,9 +10,8 @@ class LocalDataStorage(object):
     def __init__(self, ofen):
         print("Init LocalDataStorage")
         self.ofen = ofen
-        #self.conn = sqlite3.connect('OfenLocalDB2.db')
-        #self.connect2db()
 
+        #Start with clean local db
         self.cleanDb()
 
     def connect2db(self):
@@ -31,8 +30,6 @@ class LocalDataStorage(object):
         c.execute("DELETE From Records")
         conn.commit()
 
-        # We can also close the connection if we are done with it.
-        # Just be sure any changes have been committed or they will be lost.
         conn.close()
 
     def getDataAsJson(self):
@@ -58,28 +55,17 @@ class LocalDataStorage(object):
         ofenid = self.ofen.get_ofenid()
         temps = self.ofen.get_currentTempsArray()
         drosselklappe = self.ofen.get_Drosselklappe()
-        steamRegularizers = self.ofen.get_steamRegularizersValue()
+        airInput = self.ofen.get
         fan = self.ofen.get_FanValue()
         fastHeatup = self.ofen.get_FastHeatupValue()
         temp2hold = self.ofen.get_temp2hold()
         now = datetime.now()
         date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
         automode = self.ofen.get_autoMode()
-        predictedTemps = [0,0,0]
-
-        #ofenid = self.ofen.get_ofenid()
-        #temps = [11,12,13,14,15,16,17]
-        #drosselklappe = 0.1
-        #fan = 0.2
-        #fastHeatup = self.ofen.get_FastHeatupValue()
-        #temp2hold = self.ofen.get_temp2hold()
-        #now = datetime.now()
-        #date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
+        predictedTemps = [0,0,0] #Placeholders
 
         conn = self.connect2db()
         c = conn.cursor()
-
-        #print("CTLocalDB:" + str(temps))
 
         # Insert a row of data
        # c.execute("INSERT INTO Records VALUES (NULL, ofenid, temps[0], temps[1], temps[2], temps[3], temps[4], temps[5], temps[6], temp2hold, drosselklappe, fan, steamRegularizers, fastHeatup, date_time)")

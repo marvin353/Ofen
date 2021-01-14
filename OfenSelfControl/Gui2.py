@@ -1,13 +1,8 @@
-#import webview
-
-#webview.create_window('Hello world', 'https://pywebview.flowrl.com/')
-#webview.create_window('OfenWatch', 'http://localhost/controlfrog/layouts/b/layout-8.html')
-#webview.start()
-
 import eel
 import os
 import sys
 from Ofen import Ofen
+
 
 class Gui2(object):
 
@@ -19,19 +14,13 @@ class Gui2(object):
         print("Start GUI (EEL) with PID:" + str(os.getpid()))
         eel.init('web')
 
-        eel.start('controlfrog/layouts/b/layout-8.html', mode="Chrome")
+        #eel.start('controlfrog/layouts/b/layout-8.html', mode="Chrome")
+        eel.start('controlfrog/ofen.html', mode="Chrome")
 
-        #eel.start('controlfrog/layouts/b/eeltestmain.html', mode="Chrome")
-        #eel.start('main.html', mode="Chrome")  # Start
-
-    #def test(self):
-     #   print("GUI Test with PID:" + str(os.getpid()))
-      #  eel.say_hello_js("Python World! P calls J")
 
     def updateView(self, data):
         print("GUI UpdateView")
-        eel.loadData_Interrupt(str(data))#"HALLO PARKUHR")
-        #eel.say_hello_js("Python World! P calls J")
+        eel.loadData_Interrupt(str(data))
 
     def updateView_Settings(self):
         drosselklappe = str(self.ofen.get_Drosselklappe() * 100) + "%"
@@ -39,14 +28,13 @@ class Gui2(object):
             fastheatup = "AN"
         else:
             fastheatup = "AUS"
-        srzs = str(self.ofen.get_steamRegularizersValue() * 100) + "%"
         temp2hold = str(self.ofen.get_temp2hold()) + "°C"
         automode = str(self.ofen.get_temp2hold()) + "°C"
-        air = 0
+        air = str(self.ofen.get_airInput() * 100) + "%"
         errors = "Keine"
         fan = str(self.ofen.get_FanValue() * 100) + "%"
 
-        eel.loadData_Interrupt_Settings(drosselklappe, srzs, air, automode, fastheatup, temp2hold, fan ,errors)
+        eel.loadData_Interrupt_Settings(drosselklappe, air, automode, fastheatup, temp2hold, fan ,errors)
 
     def onShutdown(self):
         print("Shutdown gui")

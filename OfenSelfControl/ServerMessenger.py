@@ -8,12 +8,12 @@ import requests
 
 class ServerMessenger:
 
-    a = [[0,0,0,0,0,0,0]]
-    link_API = "http://..."
-    link_Dashboard = "http://..."
+    #a = [[0,0,0,0,0,0,0]]
+    #link_API = "http://..."
+    #link_Dashboard = "http://..."
 
     API_ENDPOINT = "http://ofenwatch.woller.pizza/php/ofenwatch/process_incoming_data.php"
-    API_KEY = "XXXXXXXXXXXXXXXXX"
+    #API_KEY = "XXXXXXXXXXXXXXXXX"
 
     def __init__(self, ofen):
         self.ofen = ofen
@@ -26,6 +26,7 @@ class ServerMessenger:
             ofenid = self.ofen.get_ofenid()
             temps = self.ofen.get_currentTempsArray()
             drosselklappe = self.ofen.get_Drosselklappe()
+            airInput = self.ofen.get_airInput()
             steamRegularizers = self.ofen.get_steamRegularizersValue()
             fan = self.ofen.get_FanValue()
             fastHeatup = self.ofen.get_FastHeatupValue()
@@ -50,7 +51,7 @@ class ServerMessenger:
                     'temp2hold': int(temp2hold),
                     'dk': drosselklappe,
                     'fan': fan,
-                    'srzs': steamRegularizers,
+                    'airInput': airInput,
                     'fastheatup': fastHeatup,
                     'automode': automode}
 
