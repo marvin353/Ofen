@@ -33,7 +33,7 @@ class Ofen:
             self.t1 = threading.Thread(target=self.collectDataSimulation, args=())
             self.t1.start()
 
-        self.tempAnalyzer = OfenTempAnalyzer(self)
+        self.tempAnalyzer = OfenTempAnalyzer2(self)
         #self.tempAnalyzer.activateAutoMode()
 
 
