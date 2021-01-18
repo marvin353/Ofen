@@ -30,9 +30,9 @@ class PiArduinoCommunicator2:
             if "D" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
-                self.ofen.set_Drosselklappe(value)
                 print("D")
                 print(value)
+                self.ofen.set_Drosselklappe(value)
             elif "G" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)

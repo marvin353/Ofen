@@ -112,7 +112,7 @@ void loop() {
     double t7 = kTC7.readCelsius();
     */
     int temps[7] = {0,0,0,0,0,0,0};
-    temps[0] = random(0, 400);
+    temps[0] = random(0, 10);
     temps[1] = random(0, 400);
     temps[2] = random(0, 400);
     temps[3] = random(0, 400);
@@ -143,6 +143,10 @@ void loop() {
     s1 += t6;
     s1 += "-";
     s1 += t7;
+
+    if(temps[0] == 4) {
+      Serial1.print("lessWood");
+    }
   
 
     //String dataStrng = "Temp1:%d-Temp2:%d-Temp3:%d-Temp4:%d-Temp5:%d-Temp6:%d-Temp7:%d",t1,t2,t3,t4,t5,t6,t7;
@@ -169,6 +173,6 @@ void loop() {
     }
   }
   
-  delay(1000);
+  //delay(1000);
 
 }
