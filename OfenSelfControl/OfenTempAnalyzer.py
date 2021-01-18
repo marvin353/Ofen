@@ -42,6 +42,8 @@ class OfenTempAnalyzer:
     DROSSELKLAPPE_STEP_VALUE_COOLDOWN = 0.75
 
     temp2hold = -1000
+    eps = 10
+    CURRENT_TEMP_ARRAY_LENGTH = 10
     arrayLength = 20
 
     def __init__(self,ofen):
@@ -81,14 +83,15 @@ class OfenTempAnalyzer:
 
             if(len(a) < self.arrayLength):
                 print("Waiting for data to be collected")
-                print("Continue with Fast Heat Up mode")
-                self.ofen.fastHeatUp()
+                #print("Continue with Fast Heat Up mode")
+                #self.ofen.fastHeatUp()
             else:
-                if(self.ofen.isFastHeatUpActive):
-                    self.ofen.stopfastHeatUp()
+                #if(self.ofen.isFastHeatUpActive):
+                #   self.ofen.stopfastHeatUp()
                 print("Call for regularization")
                 self.regularize(a)
 
+            #Überlappen (?)
             time.sleep(self.arrayLength/2)
 
     def regularize(self,values):
@@ -100,9 +103,9 @@ class OfenTempAnalyzer:
 
         m = self.calaculate_m(values)
         temp2hold = self.ofen.get_temp2hold()
-        currentTemp = self.ofen.get_currentTemp()
+        currentTemp = self.medianCurrentTemp(self.ofen.get_a_n_last_values(self.CURRENT_TEMP_ARRAY_LENGTH))#self.ofen.get_currentTemp()
 
-        if(currentTemp > (temp2hold - 10) and currentTemp < (temp2hold + 10)):
+        if(currentTemp > (temp2hold - self.eps) and currentTemp < (temp2hold + self.eps)):
             print("Regularization not required, temperature is in acceptable range")
             self.step = 0
             return
@@ -153,8 +156,42 @@ class OfenTempAnalyzer:
     def condenseArrayValues(self,tempValues):
         return np.median(tempValues, axis=1)
 
+    def medianCurrentTemp(self, tempValues):
+        return np.median(tempValues, axis=1)
 
 
 #o = Ofen(1)
 #ot = OfenTempAnalyzer()
 #print('calculatec: ', ot.calaculate_m(b[0:60]))
+
+#
+# temp == temp2hold:
+#   do nothing
+
+# temp < temp2hold:
+#   m = Steigung der letzten 30 sek
+#   m > 0:   ---> Temperatur Steigt
+#       --->Gut, nichts tun oder schnelleren Anstieg erzeugen
+#   m <= 0:
+#       --->Schlecht, weil Tempratur steigen soll
+#       mehrLuft + wenn Luft == 100% dann Fan --> mehrLuft abhängig von m? oder nur funktion auf %t/t2h basis?
+#       + overshot predict and avoid temp + m*intervall > t2h+eps?
+#
+# temp > temp2hold
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
