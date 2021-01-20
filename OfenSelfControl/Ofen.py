@@ -1,4 +1,4 @@
-from OfenTempAnalyzer import OfenTempAnalyzer
+from OfenTempAnalyzer2 import OfenTempAnalyzer2
 #from BTObserver import BTObserver
 import threading
 import time

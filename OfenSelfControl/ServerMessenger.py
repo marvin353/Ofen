@@ -1,5 +1,4 @@
-from OfenTempAnalyzer import OfenTempAnalyzer
-#from BTObserver import BTObserver
+#from OfenTempAnalyzer2 import OfenTempAnalyzer2
 import threading
 import time
 import numpy as np
@@ -27,7 +26,6 @@ class ServerMessenger:
             temps = self.ofen.get_currentTempsArray()
             drosselklappe = self.ofen.get_Drosselklappe()
             airInput = self.ofen.get_airInput()
-            steamRegularizers = self.ofen.get_steamRegularizersValue()
             fan = self.ofen.get_FanValue()
             fastHeatup = self.ofen.get_FastHeatupValue()
             temp2hold = self.ofen.get_temp2hold()

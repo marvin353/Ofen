@@ -112,7 +112,7 @@ void loop() {
     double t7 = kTC7.readCelsius();
     */
     int temps[7] = {0,0,0,0,0,0,0};
-    temps[0] = random(0, 10);
+    temps[0] = random(0, 400);
     temps[1] = random(0, 400);
     temps[2] = random(0, 400);
     temps[3] = random(0, 400);
@@ -154,7 +154,6 @@ void loop() {
     s1.toCharArray(buf,200);//Serial.read();
     Serial1.print(buf);
   }
-
 
   String s;
 
