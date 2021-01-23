@@ -135,7 +135,8 @@ class OfenTempAnalyzer2:
 
 
     def condenseArrayValues(self,tempValues):
-        return np.median(tempValues, axis=1)
+        return np.max(tempValues, axis=1)
+        #return np.median(tempValues, axis=1)
 
 
     def medianCurrentTemp(self, tempValues):
