@@ -126,7 +126,8 @@ class OfenTempAnalyzer:
 
 
     def medianCurrentTemp(self, tempValues):
-        return np.median(tempValues, axis=1)
+        temp1values = [item[0] for item in tempValues]
+        return np.median(temp1values, axis=1)
 
 
 
