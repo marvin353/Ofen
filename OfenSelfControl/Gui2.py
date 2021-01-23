@@ -28,8 +28,11 @@ class Gui2(object):
             fastheatup = "AN"
         else:
             fastheatup = "AUS"
+        if(self.ofen.get_autoMode() == 1):
+            automode = "AN"
+        else:
+            automode = "AUS"
         temp2hold = str(self.ofen.get_temp2hold()) + "°C"
-        automode = str(self.ofen.get_temp2hold()) + "°C"
         air = str(self.ofen.get_airInput() * 100) + "%"
         errors = "Keine"
         fan = str(self.ofen.get_FanValue() * 100) + "%"

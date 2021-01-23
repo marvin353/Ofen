@@ -3,17 +3,22 @@ from sklearn.linear_model import LinearRegression
 import time
 import threading
 
+t = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59])
+t = t.reshape(-1,1)
 
-class OfenTempAnalyzer:
+class OfenTempAnalyzer2:
 
-    t = np.array(range(0,60))
-    t = t.reshape(-1, 1)
+    
 
     eps = 10
     CURRENT_TEMP_ARRAY_LENGTH = 10
     arrayLength = 60 # Entspricht der halben Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
 
     def __init__(self,ofen):
+        
+        #t = np.array(range(0,60))
+        #t = t.reshape(-1, 1)
+    
         self.ofen = ofen
 
         self.autoMode = False
@@ -73,6 +78,14 @@ class OfenTempAnalyzer:
         reached = t_i1 / t2h  # Wert zwischen 0.0 und 1.0
 
         # Neuen Wert für Lufteinlass berechnen
+        print("ti########################################")
+        print(ti)
+        print("m########################################")
+        print(m)
+        print("t2h########################################")
+        print(t2h)
+        print("REACHED########################################")
+        print(reached)
         if reached <= 0.5:
             new_AirInput_value = 1.0
 
@@ -96,14 +109,14 @@ class OfenTempAnalyzer:
                 new_drosselvalue = 0.0
         else:
             # drosselklappe schließen --> Weil temp2hold vermutlich erreicht, dann Energie sparen
-            drosselvalue = 0.0
+            new_drosselvalue = 0.0
 
         # Temperatur kann nicht gehalten werden --> mehr Brennmaterial wird benötigt --> Alarm auslösen
         if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90:
             self.ofen.triggerAlert("lessWood")
 
         self.ofen.set_airInput(new_AirInput_value)
-        self.ofen.set_Drosselklappe(drosselvalue)
+        self.ofen.set_Drosselklappe(new_drosselvalue)
 
 
     def calaculate_m(self,tempValues):
@@ -126,67 +139,14 @@ class OfenTempAnalyzer:
 
 
     def medianCurrentTemp(self, tempValues):
+        print("tempvalues########################################")
+        print(tempValues)
         temp1values = [item[0] for item in tempValues]
-        return np.median(temp1values, axis=1)
+        return np.median(temp1values)
 
 
 
-
-######################
-    """def regularize_old(self, values):
-
-        print("Perform regularization")
-
-        if (len(values) == 0 or self.ofen.get_temp2hold() == -1000):
-            return
-
-        m = self.calaculate_m(values)
-        temp2hold = self.ofen.get_temp2hold()
-        currentTemp = self.medianCurrentTemp(
-            self.ofen.get_a_n_last_values(self.CURRENT_TEMP_ARRAY_LENGTH))  # self.ofen.get_currentTemp()
-
-        # Distanz in % --> z.B. t= 20, t2h = 100 => distance_t_t2h = 0.2 (20%)
-        distance_t_t2h = currentTemp / temp2hold
-
-        if (currentTemp > (temp2hold - self.eps) and currentTemp < (temp2hold + self.eps)):
-            print("Regularization not required, temperature is in acceptable range")
-            self.step = 0
-            return
-
-        # temp2hold < currentTemp --> rise temperature
-        if (currentTemp < temp2hold):
-
-            if (m <= 0):
-                # self.ofen.setDrosselklappe(self.DROSSELKLAPPE_STEP_VALUE * self.step if self.DROSSELKLAPPE_STEP_VALUE * self.step < 1 else 1)
-                drosselvalue = self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_RISE if self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_RISE < 1 else 1
-                self.ofen.set_Drosselklappe(drosselvalue)
-                if (self.step > 2):
-                    self.ofen.activateFan()
-                if (self.step > self.STEP_MAX):
-                    self.ofen.triggerAlert("lessWood")
-
-            else:
-                print("temp is rising, do nothing")
-
-        else:  # if(currentTemp >= temp2hold):
-            if (m > 0):
-                self.ofen.stopFan()
-                self.ofen.set_Drosselklappe(self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_COOLDOWN)
-
-        if (self.step > self.STEP_MAX):
-            self.step = 0
-            return
-
-        self.step += 1"""
-
-
-
-
-#o = Ofen(1)
-#ot = OfenTempAnalyzer()
-#print('calculatec: ', ot.calaculate_m(b[0:60]))
-
-
+#######################################################################
 
 
 

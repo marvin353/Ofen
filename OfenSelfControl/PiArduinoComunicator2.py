@@ -30,9 +30,9 @@ class PiArduinoCommunicator2:
             if "D" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
-                self.ofen.set_Drosselklappe(value)
                 print("D")
                 print(value)
+                self.ofen.set_Drosselklappe(value)
             elif "G" in striL:
                 strParts = re.split("-",striL)
                 value = round(float(strParts[-1]),1)
@@ -141,7 +141,7 @@ class PiArduinoCommunicator2:
 
     def write2Serial_woodWarning(self):
         print("Write 2 Serial")
-        self.ser.write("wood\n".encode('utf-8'))
+        self.ser.write("lessWood".encode('utf-8'))
 
     def write2Serial_errorWarning(self):
         print("Write 2 Serial")

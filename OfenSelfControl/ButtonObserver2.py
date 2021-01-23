@@ -1,4 +1,3 @@
-#from Ofen import Ofen
 import pigpio
 import time
 import threading
@@ -28,8 +27,8 @@ class ButtonObserver(object):
         self.pi.set_pull_up_down(self.pin_btn_white_1, pigpio.PUD_UP)
         self.pi.set_pull_up_down(self.pin_btn_white_2, pigpio.PUD_UP)
 
-        self.locks = [0,0,0,0,0,0] #red,      green , white1,   white2, dig1,      dig2
-#                                  #shutdown, SRZs,   Autopilot, ka   , temp2hold, drosselklappe(/luft)
+        self.locks = [0,0,0,0,0,0] #red,      green,  white1,   white2 , dig1,  dig2
+#                                  #shutdown, fan,    automode, ka     , luft,  drosselklappe
 
         self.shutdownRequest = False
 
@@ -74,16 +73,16 @@ class ButtonObserver(object):
             self.shutdownRequest = True
             self.unlockIt(0,2)
 
-    def buttonpressed_steamRegularizers(self):
+    def buttonpressed_fan(self):
         if (self.lockIt(1)):
-            print("Button pressed: SteamRegulaerizers")
-            #self.ofen.moveSteamRegularizers()
+            print("Button pressed: Fan")
+            self.ofen.fanAction()
             self.unlockIt(1,2)
 
     def buttonpressed_autoMode(self):
         if (self.lockIt(2)):
             print("Button pressed: Auto Mode")
-            #self.ofen.autoModeAction()
+            self.ofen.autoModeAction()
             self.unlockIt(2,2)
     
     def buttonpressed_w2(self):
