@@ -135,15 +135,30 @@ class OfenTempAnalyzer2:
 
 
     def condenseArrayValues(self,tempValues):
-        return np.max(tempValues, axis=1)
+        temp1values = np.max(tempValues, axis=1)
+
+        x = np.array(temp1values)
+        y = x[np.nonzero(x)]
+
+        #do nothing on error
+        if y == []:
+            y = [1,1]
+        return y
+
+        # Eigentlicher code...
         #return np.median(tempValues, axis=1)
 
 
     def medianCurrentTemp(self, tempValues):
         print("tempvalues########################################")
         print(tempValues)
+
         temp1values = [item[0] for item in tempValues]
-        return np.median(temp1values)
+
+        x = np.array(temp1values)
+        y = x[np.nonzero(x)]
+
+        return np.median(y)
 
 
 
