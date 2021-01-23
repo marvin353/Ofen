@@ -4,6 +4,7 @@
 String data = "Hello From Arduino!";
 
 unsigned long lastMillis;
+int t = 0;
 
 //1
 int maxSO1 = 52;
@@ -112,13 +113,19 @@ void loop() {
     double t7 = kTC7.readCelsius();
     */
     int temps[7] = {0,0,0,0,0,0,0};
-    temps[0] = random(0, 400);
-    temps[1] = random(0, 400);
-    temps[2] = random(0, 400);
-    temps[3] = random(0, 400);
-    temps[4] = random(0, 400);
-    temps[5] = random(0, 400);
-    temps[6] = random(0, 400);
+    temps[0] = t + random(-5, 5);
+    temps[1] = t + random(-50, 50);
+    temps[2] = t + random(-50, 50);
+    temps[3] = t + random(-50, 50);
+    temps[4] = t + random(-50, 50);
+    temps[5] = t + random(-50, 50);
+    temps[6] = t + random(-50, 50);
+
+    if (t < 320) {
+      t = t + random(2,5);
+    } else {
+      t = t + random(-5,5);
+    }
   
     int t1 = temps[0];
     int t2 = temps[1];
@@ -129,7 +136,7 @@ void loop() {
     int t7 = temps[6];
   
     char buf[200];
-    String s1 = "T:";
+    String s1 = "######T:";
     s1 += t1;
     s1 += "-";
     s1 += t2;
