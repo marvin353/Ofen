@@ -25,6 +25,7 @@ class PiArduinoCommunicator2:
             striL = str(stri)
             striL = striL[2:]
             striL = striL[:-5]
+            print(striL)
             striL = striL.replace(" ","")
             
             if "D" in striL:
@@ -133,7 +134,7 @@ class PiArduinoCommunicator2:
             try:
                 read_ser=self.ser.readline()
             #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
-            #read_ser = self.ser.readline().decode('utf-8').rstrip()
+                #read_ser = self.ser.readline().decode('utf-8').rstrip()
                 self.decideTempOrSettings(read_ser)
             except:
                 print("Serial Connection ERROR")

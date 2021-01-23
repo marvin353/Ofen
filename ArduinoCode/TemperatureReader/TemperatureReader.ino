@@ -106,7 +106,8 @@ void loop() {
     int t7 = (int) 500;*/
 
     char buf[200];
-    String s1 = "Temp##T:";
+    String s0 = "######";
+    String s1 = "T:";
     s1 += t1;
     s1 += "-";
     s1 += t2;
@@ -125,6 +126,7 @@ void loop() {
 
     //String dataStrng = "Temp1:%d-Temp2:%d-Temp3:%d-Temp4:%d-Temp5:%d-Temp6:%d-Temp7:%d",t1,t2,t3,t4,t5,t6,t7;
     Serial.println(s1);
+    s1 = s0 + s1;
     s1.toCharArray(buf,200);//Serial.read();
     Serial1.print(buf);
   }
