@@ -1,0 +1,822 @@
+body {
+  color: #25394d;
+  font-size: 12px; }
+
+a {
+  color: #16a085; }
+
+a:hover {
+  color: #1abc9c; }
+  
+.theCanvas {
+	background-color: red;
+	width:100%;
+	height:100%;
+	}
+
+.cf-container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  overflow: hidden;
+  left: 0;
+  position: relative;
+  -webkit-transition: left 0.3s ease;
+  -moz-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+  transition: left 0.3s ease; }
+  .cf-container.cf-nav-active {
+    padding: 0 1px 0 29px; }
+  .cf-container.cf-nav-state-max {
+    left: 230px;
+    position: relative;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    transition: left 0.3s ease; }
+
+.cf-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 100%;
+  z-index: 100;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease; }
+  .cf-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .cf-nav a {
+    display: block;
+    position: relative; }
+    .cf-nav a:hover {
+      text-decoration: none; }
+  .cf-nav .cf-nav-min {
+    width: 25px;
+    text-align: center;
+    display: block;
+    padding: 8px 3px; }
+    .cf-nav .cf-nav-min:hover {
+      text-decoration: none; }
+  .cf-nav .cf-nav-max {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 225px;
+    padding: 8px 10px 8px 0; }
+  .cf-nav .icon-bar {
+    display: block;
+    width: 17px;
+    height: 2px;
+    margin: 3px 4px 0 4px; }
+  .cf-nav .cf-nav-toggle {
+    display: block;
+    margin: 8px 0 8px 0; }
+  .cf-nav ul ul a {
+    padding: 8px 3px 8px 25px; }
+  .cf-nav a:active {
+    outline: none; }
+
+.cf-nav-state-min .cf-nav-max {
+  display: none; }
+.cf-nav-state-min li {
+  display: none; }
+  .cf-nav-state-min li.cf-nav-shortcut {
+    display: inline-block;
+    width: 100%; }
+
+.cf-nav-state-max li {
+  display: list-item;
+  width: 100%; }
+  .cf-nav-state-max li .cf-nav-min,
+  .cf-nav-state-max li .cf-nav-max {
+    display: inline-block; }
+  .cf-nav-state-max li .cf-nav-max {
+    width: 200px; }
+.cf-nav-state-max.cf-nav {
+  width: 250px;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease; }
+
+@media (min-width: 768px) {
+  .vh100 {
+    height: 100vh; }
+
+  .vh60 {
+    height: 60vh; }
+
+  .vh50 {
+    height: 50vh; }
+
+  .vh40 {
+    height: 40vh; }
+
+  .vh25 {
+    height: 25vh; }
+
+  .vh-1-3rd {
+    height: 33.3vh; }
+
+  .vh-2-3rds {
+    height: 66.6vh; } }
+.cf-item {
+  height: 100%;
+  min-height: 200px; }
+  @media (min-width: 768px) {
+    .cf-item {
+      min-height: auto; } }
+  .cf-item header {
+	font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: solid 1px; }
+    .cf-item header p {
+      margin: 1% 0 1% 0;
+      white-space: nowrap; }
+      .cf-item header p span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin-bottom: 2px;
+        margin-right: 5px; }
+  .cf-item .content {
+    width: 100%;
+    margin: 2% auto 4% auto;
+    height: 80%;
+    position: relative; }
+
+/* Metric sizes */
+.metric {
+  font-size: 5rem;
+  line-height: 1; }
+
+.metric-small {
+  font-size: 1.5em;
+  line-height: 1; }
+  
+.metric-small2 {
+  font-size: 3em;
+  line-height: 1; }
+
+/* Color definitions */
+#controlfrog.black {
+  background-color: #2b2b2b;
+  color: #a9a9a9; }
+  #controlfrog.black .m-missing {
+    color: #4f4f4f !important; }
+  #controlfrog.black .mb-missing {
+    background-color: #4f4f4f !important; }
+  #controlfrog.black .cf-nav {
+    background: #333333; }
+    #controlfrog.black .cf-nav .router-link-exact-active a {
+      background-color: #2b2b2b; }
+    #controlfrog.black .cf-nav a {
+      color: #a9a9a9; }
+      #controlfrog.black .cf-nav a:hover {
+        background-color: #4f4f4f;
+        color: #a9a9a9; }
+    #controlfrog.black .cf-nav .icon-bar {
+      background-color: #a9a9a9; }
+    #controlfrog.black .cf-nav .cf-nav-toggle:hover {
+      background-color: inherit; }
+      #controlfrog.black .cf-nav .cf-nav-toggle:hover .icon-bar {
+        background-color: #fff; }
+  #controlfrog.black .navbar {
+    background-color: #4f4f4f; }
+  #controlfrog.black .navbar-default .navbar-nav > .active > a, #controlfrog.black .navbar-default .navbar-nav > .active > a:hover, #controlfrog.black .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #a9a9a9; }
+  #controlfrog.black .cf-item header {
+    border-bottom-color: #4f4f4f; }
+    #controlfrog.black .cf-item header p span {
+      background-color: #4f4f4f; }
+  #controlfrog.black .metric {
+    color: #f2f2f2; }
+  #controlfrog.black .cf-rag ul li {
+    border-bottom: solid 1px #2b2b2b; }
+    #controlfrog.black .cf-rag ul li:last-child {
+      border-bottom: none; }
+  #controlfrog.black .cf-rag .cf-figs li,
+  #controlfrog.black .cf-rag .cf-txts li {
+    border-bottom: solid 1px #4f4f4f; }
+    #controlfrog.black .cf-rag .cf-figs li:last-child,
+    #controlfrog.black .cf-rag .cf-txts li:last-child {
+      border-bottom: none; }
+  #controlfrog.black .cf-funnel .cf-funnels li {
+    border-bottom: solid 1px #2b2b2b; }
+  #controlfrog.black .cf-funnel .cf-figstxts li {
+    border-bottom: solid 1px #4f4f4f; }
+    #controlfrog.black .cf-funnel .cf-figstxts li:last-child {
+      border-bottom: none; }
+#controlfrog.white {
+  background-color: #fff;
+  color: #a9a9a9; }
+  #controlfrog.white .m-missing {
+    color: #e2e2e2 !important; }
+  #controlfrog.white .mb-missing {
+    background-color: #e2e2e2 !important; }
+  #controlfrog.white .cf-nav {
+    background: #ececec; }
+    #controlfrog.white .cf-nav .router-link-exact-active a {
+      background-color: #fff; }
+    #controlfrog.white .cf-nav a {
+      color: #a8a8a8; }
+      #controlfrog.white .cf-nav a:hover {
+        background-color: #e2e2e2;
+        color: #a9a9a9; }
+    #controlfrog.white .cf-nav .icon-bar {
+      background-color: #a9a9a9; }
+    #controlfrog.white .cf-nav .cf-nav-toggle:hover {
+      background-color: inherit; }
+      #controlfrog.white .cf-nav .cf-nav-toggle:hover .icon-bar {
+        background-color: #000; }
+  #controlfrog.white .cf-item header {
+    border-bottom-color: #a9a9a9; }
+    #controlfrog.white .cf-item header p span {
+      background-color: #a9a9a9; }
+  #controlfrog.white .metric {
+    color: #7d7d7d; }
+  #controlfrog.white .cf-rag ul li {
+    border-bottom: solid 1px #fff; }
+    #controlfrog.white .cf-rag ul li:last-child {
+      border-bottom: none; }
+  #controlfrog.white .cf-rag .cf-figs li,
+  #controlfrog.white .cf-rag .cf-txts li {
+    border-bottom: solid 1px #a9a9a9; }
+    #controlfrog.white .cf-rag .cf-figs li:last-child,
+    #controlfrog.white .cf-rag .cf-txts li:last-child {
+      border-bottom: 0; }
+  #controlfrog.white .cf-funnel .cf-funnels li {
+    border-bottom: solid 1px #fff; }
+    #controlfrog.white .cf-funnel .cf-funnels li:last-child {
+      border-bottom: none; }
+  #controlfrog.white .cf-funnel .cf-figstxts li {
+    border-bottom: solid 1px #a9a9a9; }
+    #controlfrog.white .cf-funnel .cf-figstxts li:last-child {
+      border-bottom: none; }
+  #controlfrog.white .cf-rss .carousel-indicators .active {
+    background-color: #a9a9a9; }
+  #controlfrog.white .cf-rss .carousel-indicators li {
+    border: 1px solid #a9a9a9; }
+
+.m-red {
+  color: #f23c25 !important; }
+  .m-red.mb {
+    background-color: #f23c25; }
+  .m-red .arrow-up:before {
+    background-color: #f23c25; }
+  .m-red .arrow-down:before {
+    background-color: #f23c25; }
+
+.m-amber {
+  color: #e89640 !important; }
+  .m-amber.mb {
+    background-color: #e89640; }
+  .m-amber .arrow-up:before {
+    background-color: #e89640; }
+  .m-amber .arrow-down:before {
+    background-color: #e89640; }
+
+.m-green {
+  color: #66ce39 !important; }
+  .m-green.mb {
+    background-color: #66ce39; }
+  .m-green .arrow-up:before {
+    background-color: #66ce39; }
+  .m-green .arrow-down:before {
+    background-color: #66ce39; }
+
+/* Arrows */
+.arrow-up,
+.arrow-down {
+  width: 8%;
+  padding-bottom: 6.9%;
+  /*  = width / 1.157 for skewX(30deg) */
+  position: relative;
+  overflow: hidden; }
+
+.arrow-up:before,
+.arrow-down:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 100%;
+  transform: rotate(60deg) skewX(30deg); }
+
+.arrow-down:before {
+  transform: rotate(60deg) skewX(30deg);
+  transform-origin: 100% 0; }
+
+/****************** 
+ Widget definitions 
+*******************/
+/** MODULE: Single value metric with change **/
+.cf-svmc {
+  width: 100%; }
+  .cf-svmc .change {
+    line-height: 1; }
+    .cf-svmc .change div {
+      float: left; }
+    .cf-svmc .change .arrow-up,
+    .cf-svmc .change .arrow-down {
+      margin-top: 1.3%;
+      margin-right: 2%;
+      margin-left: 1%; }
+    .cf-svmc .change.metric-small {
+      font-size: 2.5em; }
+    .cf-svmc .change .small {
+      font-size: 0.8em; }
+
+/** MODULE: RAG bars **/
+.cf-rag {
+  height: 100%; }
+  .cf-rag ul {
+    list-style-type: none;
+    height: 100%;
+    padding: 0;
+    margin: 0; }
+    .cf-rag ul li {
+      display: block;
+      width: 100%; }
+  .cf-rag .cf-bars,
+  .cf-rag .cf-figs,
+  .cf-rag .cf-txts {
+    width: 45%;
+    height: 100%;
+    float: left; }
+    .cf-rag .cf-bars li,
+    .cf-rag .cf-figs li,
+    .cf-rag .cf-txts li {
+      height: 33%; }
+      .cf-rag .cf-bars li div,
+      .cf-rag .cf-figs li div,
+      .cf-rag .cf-txts li div {
+        height: 100%;
+        width: 100%;
+        display: table; }
+      .cf-rag .cf-bars li p,
+      .cf-rag .cf-figs li p,
+      .cf-rag .cf-txts li p {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0; }
+  .cf-rag .cf-bars,
+  .cf-rag .cf-figs {
+    width: 25%; }
+  .cf-rag .cf-figs.cf-figs-only {
+    width: 35%; }
+  .cf-rag .cf-txts.cf-txts-only {
+    width: 65%; }
+  .cf-rag .cf-bars {
+    margin-right: 5%; }
+  .cf-rag .cf-bars-bar {
+    height: 100%;
+    width: 100%;
+    float: left; }
+  .cf-rag .cf-figs-fig {
+    text-align: center;
+    font-size: 2em; }
+  .cf-rag .cf-txts-txt {
+    text-align: left; }
+
+/** MODULE: Funnel **/
+.cf-funnel {
+  height: 100%; }
+  .cf-funnel .cf-funnels,
+  .cf-funnel .cf-figstxts {
+    float: left;
+    height: 100%; }
+    .cf-funnel .cf-funnels ul,
+    .cf-funnel .cf-figstxts ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: 100%; }
+  .cf-funnel .cf-figstxts {
+    width: 55%;
+    overflow: hidden; }
+  .cf-funnel .cf-funnels {
+    width: 40%; }
+    .cf-funnel .cf-funnels.cf-funnels-left {
+      margin-left: 0;
+      margin-right: 5%; }
+      .cf-funnel .cf-funnels.cf-funnels-left li {
+        float: right;
+        clear: right; }
+    .cf-funnel .cf-funnels li {
+      height: 20%;
+      display: block; }
+    .cf-funnel .cf-funnels.cf-funnels-right {
+      margin-left: 5%;
+      margin-right: 0; }
+  .cf-funnel .cf-figstxts li {
+    height: 20%; }
+    .cf-funnel .cf-figstxts li div {
+      height: 100%;
+      display: table;
+      width: 100%; }
+      .cf-funnel .cf-figstxts li div p {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0;
+        line-height: 1;
+        text-align: right;
+        padding-right: 5%;
+        white-space: nowrap; }
+        .cf-funnel .cf-figstxts li div p.metric {
+          font-size: 2em;
+          padding-right: 10%;
+          text-align: left; }
+
+/** MODULE: Time & Date **/
+.cf-td p {
+  margin-bottom: 5px; }
+.cf-td .cf-td-time span {
+  text-transform: uppercase;
+  font-size: 0.2em; }
+
+/** MODULE: Single value pie **/
+.cf-svp {
+  position: relative;
+  text-align: center; }
+  .cf-svp .metrics,
+  .cf-svp canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+/** MODULE: Gauge / Zoned Gauge **/
+.cf-gauge .val-current,
+.cf-zoned-gauge .val-current {
+  font-size: 0.7em;
+  margin-top: 2%;
+  text-align: center;
+  position: relative;
+  height: 30%; }
+.cf-gauge .val-min,
+.cf-zoned-gauge .val-min {
+  position: absolute;
+  left: 10%;
+  bottom: 45%;
+  font-size: 1em; }
+.cf-gauge .val-max,
+.cf-zoned-gauge .val-max {
+  position: absolute;
+  right: 10%;
+  bottom: 45%;
+  font-size: 1em; }
+.cf-gauge canvas,
+.cf-zoned-gauge canvas {
+  display: block;
+  margin: auto;
+  width: 75%;
+  height: 100%; }
+
+/** MODULE: Single value metric and change with bars / area /trend **/
+.cf-svmc-chart {
+  width: 100%; }
+  .cf-svmc-chart .cf-svmc-trend,
+  .cf-svmc-chart .cf-svmc-area,
+  .cf-svmc-chart .cf-svmc-bars {
+    height: 55%;
+    width: 100%;
+    position: relative; }
+    .cf-svmc-chart .cf-svmc-trend > div,
+    .cf-svmc-chart .cf-svmc-area > div,
+    .cf-svmc-chart .cf-svmc-bars > div {
+      position: relative;
+      height: 100%;
+      width: 100%; }
+  .cf-svmc-chart .cf-svmc-metrics {
+    height: 45%; }
+    .cf-svmc-chart .cf-svmc-metrics .metric {
+      float: left;
+      margin-right: 5%; }
+    .cf-svmc-chart .cf-svmc-metrics .metric-small {
+      margin-top: 2%; }
+    .cf-svmc-chart .cf-svmc-metrics .change {
+      padding-top: 4%; }
+
+/** MODULE: Yes or No **/
+.cf-yn {
+  text-transform: uppercase;
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  .cf-yn .metric {
+    display: table-cell;
+    vertical-align: middle; }
+
+/** MODULE: Doughnut chart **/
+.cf-doughnut {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  .cf-doughnut > div {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+
+/** MODULE: Pie chart **/
+.cf-pie {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  .cf-pie > div {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+
+/** MODULE: Line chart **/
+.cf-line {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  .cf-line > div {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+
+/** MODULE: Bar chart **/
+.cf-bar {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+  .cf-bar > div {
+    position: relative;
+    height: 100%;
+    width: 100%; }
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a,
+  .navbar-brand {
+    padding-top: 5px;
+    padding-bottom: 5px; } }
+@media (min-width: 768px) {
+  	/*
+  	body {
+  		&:before {
+  			content: 'Medium devices (tablets, 768px and up)';
+  			background-color: red;
+  			color: white;
+  			position: absolute;
+  			left: 40%;
+  			padding: 10px;
+  			z-index: 100;
+  		}
+  	}
+  */
+  .col-md-6 .col-md-12 .metric,
+  .col-md-12 .metric {
+    font-size: 8rem; }
+
+  .col-md-6 .col-md-4 .metric {
+    font-size: 2.5rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .metric,
+  .col-md-6 .metric,
+  .col-sm-6 .metric {
+    font-size: 4rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-figstxts .metric,
+  .col-md-6 .cf-figstxts .metric,
+  .col-sm-6 .cf-figstxts .metric {
+    font-size: 1.1rem; }
+
+  .col-md-6 .col-md-4 .cf-figstxts .metric {
+    font-size: 1rem; }
+
+  .col-md-6 .col-md-12 .cf-rag .cf-figs-fig,
+  .col-md-12 .cf-rag .cf-figs-fig {
+    font-size: 3em; }
+  .col-md-6 .col-md-12 .cf-rag .cf-txts .cf-txts-txt,
+  .col-md-12 .cf-rag .cf-txts .cf-txts-txt {
+    font-size: 1.5em; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-rag .cf-figs-fig,
+  .col-md-6 .cf-rag .cf-figs-fig,
+  .col-sm-6 .cf-rag .cf-figs-fig {
+    font-size: 1.5em; }
+  .col-md-6 .col-md-12 .col-md-6 .cf-rag .cf-txts .cf-txts-txt,
+  .col-md-6 .cf-rag .cf-txts .cf-txts-txt,
+  .col-sm-6 .cf-rag .cf-txts .cf-txts-txt {
+    font-size: 1em; }
+
+  .col-md-6 .col-md-4 .cf-rag .cf-figs-fig {
+    font-size: 1em; }
+
+  .col-md-6 .col-md-4 .cf-svmc .metric {
+    font-size: 3.5rem; }
+  .col-md-6 .col-md-4 .cf-svmc .metric-small {
+    font-size: 1.2rem; }
+
+  .col-md-6 .col-md-4 .cf-svmc .metric {
+    font-size: 2rem; }
+  .col-md-6 .col-md-4 .cf-svmc .metric-small {
+    font-size: 1rem; }
+
+  .col-md-4 .col-md-12 .cf-svmc .metric {
+    font-size: 5rem; }
+  .col-md-4 .col-md-12 .cf-svmc .metric-small {
+    font-size: 1.5rem; }
+
+  .col-md-6 .col-md-4 .cf-svp .metric {
+    font-size: 1em; }
+
+  .col-md-4 .col-md-12 .cf-svp .metric {
+    font-size: 6rem; }
+
+  .col-md-6 .col-md-12 .cf-gauge .metric, .col-md-6 .col-md-12 .cf-zoned-gauge .metric,
+  .col-md-12 .cf-gauge .metric,
+  .col-md-12 .cf-zoned-gauge .metric {
+    font-size: 6rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-gauge .metric, .col-md-6 .col-md-12 .col-md-6 .cf-zoned-gauge .metric,
+  .col-md-6 .cf-gauge .metric,
+  .col-md-6 .cf-zoned-gauge .metric,
+  .col-sm-6 .cf-gauge .metric,
+  .col-sm-6 .cf-zoned-gauge .metric {
+    font-size: 2rem; }
+
+  .col-md-6 .col-md-4 .cf-gauge .metric, .col-md-6 .col-md-4 .cf-zoned-gauge .metric {
+    font-size: 1.5rem; }
+
+  .col-md-4 .col-md-12 .cf-gauge .metric, .col-md-4 .col-md-12 .cf-zoned-gauge .metric {
+    font-size: 3rem; }
+
+  .col-md-6 .col-md-12 .cf-svmc-metrics .metric,
+  .col-md-12 .cf-svmc-metrics .metric {
+    font-size: 8rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-svmc-metrics .metric,
+  .col-md-6 .cf-svmc-metrics .metric,
+  .col-sm-6 .cf-svmc-metrics .metric {
+    font-size: 3rem; }
+
+  .col-md-6 .col-md-4 .cf-svmc-metrics .metric {
+    font-size: 3rem; }
+
+  .col-md-4 .col-md-12 .cf-svmc-metrics .metric {
+    font-size: 5rem; } }
+@media (min-width: 992px) {
+  /*
+  body {
+  	&:before {
+  		content: 'Large devices (desktops, 992px and up)';
+  		background-color: orange;
+  		color: black;
+  		position: absolute;
+  		left: 40%;
+  		padding: 10px;
+  		z-index: 100;
+  	}
+  }
+  */
+  .col-md-6 .col-md-12 .metric,
+  .col-md-12 .metric {
+    font-size: 11rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .metric,
+  .col-md-6 .metric,
+  .col-sm-6 .metric {
+    font-size: 6rem; }
+
+  .col-md-6 .col-md-4 .metric {
+    font-size: 3.5rem; }
+
+  .col-md-4 .col-md-12 .metric {
+    font-size: 8rem; }
+
+  .col-md-6 .col-md-12 .cf-td-dd,
+  .col-md-12 .cf-td-dd {
+    font-size: 1.5rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-td-dd,
+  .col-md-6 .cf-td-dd,
+  .col-sm-6 .cf-td-dd {
+    font-size: 1rem; }
+
+  .col-md-6 .col-md-4 .cf-td-dd {
+    font-size: 0.7rem; }
+
+  .col-md-6 .col-md-12 .cf-funnels,
+  .col-md-12 .cf-funnels {
+    width: 55%; }
+  .col-md-6 .col-md-12 .cf-figstxts,
+  .col-md-12 .cf-figstxts {
+    width: 40%; }
+
+  .col-md-6 .col-md-12 .cf-rag .cf-figs-fig,
+  .col-md-12 .cf-rag .cf-figs-fig {
+    font-size: 5em; }
+  .col-md-6 .col-md-12 .cf-rag .cf-txts .cf-txts-txt,
+  .col-md-12 .cf-rag .cf-txts .cf-txts-txt {
+    font-size: 1.5em; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-rag .cf-figs-fig,
+  .col-md-6 .cf-rag .cf-figs-fig,
+  .col-sm-6 .cf-rag .cf-figs-fig {
+    font-size: 2em; }
+  .col-md-6 .col-md-12 .col-md-6 .cf-rag .cf-txts .cf-txts-txt,
+  .col-md-6 .cf-rag .cf-txts .cf-txts-txt,
+  .col-sm-6 .cf-rag .cf-txts .cf-txts-txt {
+    font-size: 1em; }
+
+  .col-md-6 .col-md-4 .cf-rag .cf-figs-fig {
+    font-size: 1.5em; }
+
+  .col-md-4 .col-md-12 .cf-rag .cf-figs-fig {
+    font-size: 3.5em; }
+
+  .col-md-6 .col-md-12 .cf-svmc .metric,
+  .col-md-12 .cf-svmc .metric {
+    font-size: 14rem; }
+  .col-md-6 .col-md-12 .cf-svmc .metric-small,
+  .col-md-12 .cf-svmc .metric-small {
+    font-size: 4rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-svmc .metric,
+  .col-md-6 .cf-svmc .metric,
+  .col-sm-6 .cf-svmc .metric {
+    font-size: 6rem; }
+  .col-md-6 .col-md-12 .col-md-6 .cf-svmc .metric-small,
+  .col-md-6 .cf-svmc .metric-small,
+  .col-sm-6 .cf-svmc .metric-small {
+    font-size: 1.8rem; }
+
+  .col-md-4 .col-md-12 .cf-svmc .metric {
+    font-size: 9rem; }
+  .col-md-4 .col-md-12 .cf-svmc .metric-small {
+    font-size: 2.5rem; }
+
+  .col-md-6 .col-md-4 .cf-svmc .metric {
+    font-size: 3.5rem; }
+  .col-md-6 .col-md-4 .cf-svmc .metric-small {
+    font-size: 1.2rem; }
+
+  .col-md-6 .col-md-12 .cf-gauge .metric, .col-md-6 .col-md-12 .cf-zoned-gauge .metric,
+  .col-md-12 .cf-gauge .metric,
+  .col-md-12 .cf-zoned-gauge .metric {
+    font-size: 6rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-gauge .metric, .col-md-6 .col-md-12 .col-md-6 .cf-zoned-gauge .metric,
+  .col-md-6 .cf-gauge .metric,
+  .col-md-6 .cf-zoned-gauge .metric,
+  .col-sm-6 .cf-gauge .metric,
+  .col-sm-6 .cf-zoned-gauge .metric {
+    font-size: 3rem; }
+
+  .col-md-6 .col-md-4 .cf-gauge .metric, .col-md-6 .col-md-4 .cf-zoned-gauge .metric {
+    font-size: 1.5rem; }
+
+  .col-md-4 .col-md-12 .cf-gauge .metric, .col-md-4 .col-md-12 .cf-zoned-gauge .metric {
+    font-size: 5rem; }
+
+  .col-md-6 .col-md-12 .cf-svp .metric,
+  .col-md-12 .cf-svp .metric {
+    font-size: 9rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-svp .metric,
+  .col-md-6 .cf-svp .metric,
+  .col-sm-6 .cf-svp .metric {
+    font-size: 3.5rem; }
+
+  .col-md-6 .col-md-4 .cf-svp .metric {
+    font-size: 3.5rem; } }
+@media (min-width: 1200px) {
+  /*
+  body {
+  	&:before {
+  		content: 'Extra large devices (large desktops, 1200px and up)';
+  		background-color: rgb(255, 0, 140);
+  		color: black;
+  		position: absolute;
+  		left: 40%;
+  		padding: 10px;
+  		z-index: 100;
+  	}
+  }
+  */
+  .col-md-6 .col-md-12 .cf-svmc-metrics .metric,
+  .col-md-12 .cf-svmc-metrics .metric {
+    font-size: 11rem; }
+
+  .col-md-6 .col-md-12 .col-md-6 .cf-svmc-metrics .metric,
+  .col-md-6 .cf-svmc-metrics .metric,
+  .col-sm-6 .cf-svmc-metrics .metric {
+    font-size: 5rem; }
+
+  .col-md-6 .col-md-4 .cf-svmc-metrics .metric {
+    font-size: 3rem; }
+
+  .col-md-4 .col-md-12 .cf-svmc-metrics .metric {
+    font-size: 7rem; } }

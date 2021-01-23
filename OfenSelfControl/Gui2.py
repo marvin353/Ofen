@@ -15,7 +15,7 @@ class Gui2(object):
         eel.init('web')
 
         #eel.start('controlfrog/layouts/b/layout-8.html', mode="Chrome")
-        eel.start('controlfrog/ofen.html', mode="Chrome")
+        eel.start('ofen.html', mode="Chrome")
 
 
     def updateView(self, data):
