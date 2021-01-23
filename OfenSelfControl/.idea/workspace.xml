@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HardwareController2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArduinoCode/TemperatureReader/TemperatureReader.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../ArduinoCode/TemperatureReader/TemperatureReader.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArduinoCode/TemperatureReader/simulation/simulation.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../ArduinoCode/TemperatureReader/simulation/simulation.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ButtonObserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonObserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ButtonObserver2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ButtonObserver2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HardwareController.py" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ofen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ofen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenLocalDB2.db" beforeDir="false" afterPath="$PROJECT_DIR$/OfenLocalDB2.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer2.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenTempAnalyzer2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiArduinoComunicator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiArduinoComunicator2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerMessenger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ServerMessenger.py" afterDir="false" />
-    </list>
+    <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+            <state relative-caret-position="-276">
+              <caret line="136" column="43" lean-forward="true" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -107,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
+            <state relative-caret-position="1606">
               <caret line="145" selection-start-line="145" selection-end-line="145" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -389,12 +376,12 @@
       <workItem from="1598553496095" duration="1237000" />
       <workItem from="1602893302072" duration="342000" />
       <workItem from="1610359058515" duration="28832000" />
-      <workItem from="1611394569164" duration="734000" />
+      <workItem from="1611394569164" duration="907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178651000" />
+    <option name="totallyTimeSpent" value="178824000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,16 +483,6 @@
     <entry file="file://$PROJECT_DIR$/testNotebook.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -567,8 +544,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ButtonObserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+        <state relative-caret-position="-276">
+          <caret line="136" column="43" lean-forward="true" selection-start-line="136" selection-start-column="43" selection-end-line="136" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
