@@ -108,11 +108,11 @@ class HardwareController2:
         value2move = 0
 
         if (newValue > self.currentValue2):
-            motorDirection = 'forward'
+            motorDirection = 'backward'
             value2move = int(16000 * newValue) - self.currentStep2
             self.currentStep2 = self.currentStep2 + value2move
         elif (newValue < self.currentValue2):
-            motorDirection = 'backward'
+            motorDirection = 'forward'
             value2move = (int(16000 * newValue) - self.currentStep2) * (-1)
             self.currentStep2 = self.currentStep2 - value2move
         else:
