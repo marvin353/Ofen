@@ -141,7 +141,7 @@ class PiArduinoCommunicator2:
 
     def write2Serial_woodWarning(self):
         print("Write 2 Serial")
-        self.ser.write("wood\n".encode('utf-8'))
+        self.ser.write("lessWood".encode('utf-8'))
 
     def write2Serial_errorWarning(self):
         print("Write 2 Serial")

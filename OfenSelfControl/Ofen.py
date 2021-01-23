@@ -1,5 +1,4 @@
 from OfenTempAnalyzer2 import OfenTempAnalyzer2
-#from BTObserver import BTObserver
 import threading
 import time
 import numpy as np

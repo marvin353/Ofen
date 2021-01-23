@@ -146,62 +146,7 @@ class OfenTempAnalyzer2:
 
 
 
-
-######################
-    """def regularize_old(self, values):
-
-        print("Perform regularization")
-
-        if (len(values) == 0 or self.ofen.get_temp2hold() == -1000):
-            return
-
-        m = self.calaculate_m(values)
-        temp2hold = self.ofen.get_temp2hold()
-        currentTemp = self.medianCurrentTemp(
-            self.ofen.get_a_n_last_values(self.CURRENT_TEMP_ARRAY_LENGTH))  # self.ofen.get_currentTemp()
-
-        # Distanz in % --> z.B. t= 20, t2h = 100 => distance_t_t2h = 0.2 (20%)
-        distance_t_t2h = currentTemp / temp2hold
-
-        if (currentTemp > (temp2hold - self.eps) and currentTemp < (temp2hold + self.eps)):
-            print("Regularization not required, temperature is in acceptable range")
-            self.step = 0
-            return
-
-        # temp2hold < currentTemp --> rise temperature
-        if (currentTemp < temp2hold):
-
-            if (m <= 0):
-                # self.ofen.setDrosselklappe(self.DROSSELKLAPPE_STEP_VALUE * self.step if self.DROSSELKLAPPE_STEP_VALUE * self.step < 1 else 1)
-                drosselvalue = self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_RISE if self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_RISE < 1 else 1
-                self.ofen.set_Drosselklappe(drosselvalue)
-                if (self.step > 2):
-                    self.ofen.activateFan()
-                if (self.step > self.STEP_MAX):
-                    self.ofen.triggerAlert("lessWood")
-
-            else:
-                print("temp is rising, do nothing")
-
-        else:  # if(currentTemp >= temp2hold):
-            if (m > 0):
-                self.ofen.stopFan()
-                self.ofen.set_Drosselklappe(self.ofen.get_Drosselklappe() * self.DROSSELKLAPPE_STEP_VALUE_COOLDOWN)
-
-        if (self.step > self.STEP_MAX):
-            self.step = 0
-            return
-
-        self.step += 1"""
-
-
-
-
-#o = Ofen(1)
-#ot = OfenTempAnalyzer()
-#print('calculatec: ', ot.calaculate_m(b[0:60]))
-
-
+#######################################################################
 
 
 

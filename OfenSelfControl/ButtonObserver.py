@@ -47,7 +47,7 @@ class ButtonObserver(object):
         GPIO.setup(self.pin2_dig2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
         self.locks = [0,0,0,0,0,0] #red,      green, white1,   white2, dig1,      dig2
-#                                  #shutdown, SRZs,  Automode, ka,     temp2hold, drosselklappe(/luft)
+#                                  #shutdown, SRZs,  Automode, fan,     luft, drosselklappe(/luft)
 
         self.shutdownRequest = False
 
@@ -72,7 +72,7 @@ class ButtonObserver(object):
 
             change = self.get_encoder_DIG1()
             if change != 0:
-                self.DIGTurned_temp2hold(change)
+                self.DIGTurned_airInput(change)
                 change = 0
 
             change2 = self.get_encoder_DIG2()
@@ -107,7 +107,7 @@ class ButtonObserver(object):
     def buttonpressed_steamRegularizers(self):
         if (self.lockIt(1)):
             print("Button pressed: SteamRegulaerizers")
-            self.ofen.moveSteamRegularizers()
+            #self.ofen.moveSteamRegularizers()
             self.ofenMain.interruptAction()
             self.unlockIt(1, 1)
 
@@ -125,16 +125,18 @@ class ButtonObserver(object):
             self.ofenMain.interruptAction()
             self.unlockIt(3, 1)
 
-    def DIGTurned_temp2hold(self, change):
+    def DIGTurned_airInput(self, change):
         #newVal = self.x1 + change * 5
-        newVal = self.ofen.get_temp2hold() + change * 5
+        newVal = self.ofen.get_airInput() + change * 0.1
         #newVal = round(newVal, 2)
         if (newVal <= 0):
             newVal = 0
-        self.ofen.set_temp2hold(newVal)
+        if (newVal > 1):
+            newVal = 1
+        self.ofen.set_airInput(newVal)
         self.ofenMain.interruptAction_DIG()
         #self.x1 = newVal
-        print("DIG Turned: temp2Hold, With Value:" + str(newVal))
+        print("DIG Turned: airInput, With Value:" + str(newVal))
 
     def DIGTurned_drosselklappe(self, change):
         #newVal = self.x2 + change * 0.02
