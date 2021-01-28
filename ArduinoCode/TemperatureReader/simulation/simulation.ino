@@ -114,12 +114,12 @@ void loop() {
     */
     int temps[7] = {0,0,0,0,0,0,0};
     temps[0] = t + random(-5, 5);
-    temps[1] = t + random(-50, 50);
-    temps[2] = t + random(-50, 50);
-    temps[3] = t + random(-50, 50);
-    temps[4] = t + random(-50, 50);
-    temps[5] = t + random(-50, 50);
-    temps[6] = t + random(-50, 50);
+    temps[1] = t + random(-10, 10);
+    temps[2] = t + random(-10, 10);
+    temps[3] = t + random(-10, 10);
+    temps[4] = t + random(-10, 10);
+    temps[5] = t + random(-10, 10);
+    temps[6] = t + random(-10, 10);
 
     if (t < 320) {
       t = t + random(2,5);
