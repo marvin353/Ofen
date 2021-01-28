@@ -7,10 +7,6 @@ import requests
 
 class ServerMessenger:
 
-    #a = [[0,0,0,0,0,0,0]]
-    #link_API = "http://..."
-    #link_Dashboard = "http://..."
-
     API_ENDPOINT = "http://ofenwatch.woller.pizza/php/ofenwatch/process_incoming_data.php"
     #API_KEY = "XXXXXXXXXXXXXXXXX"
 
