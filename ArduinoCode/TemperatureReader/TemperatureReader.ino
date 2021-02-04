@@ -64,14 +64,8 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  //Serial.print("C = "); 
-  //Serial.println(kTC.readCelsius());
-  // delay so it doesn't scroll too fast.
-  //delay(1000);
-  
-  //Serial.println(data);//data that is being Sent
-  //delay(200);
+
+  // Ein mal alle 1000ms ausführen
   if (millis() - lastMillis >= 1000UL) {
     lastMillis = millis();
 
@@ -90,23 +84,8 @@ void loop() {
     int t5 = (int) d5;
     int t6 = (int) d6;
     int t7 = (int) d7;
-    /*int t1 = (int) random(0, 400);
-    int t2 = (int) random(0, 400);
-    int t3 = (int) random(0, 400);
-    int t4 = (int) random(0, 400);
-    int t5 = (int) random(0, 400);
-    int t6 = (int) random(0, 400);
-    int t7 = (int) random(0, 400);
-    int t1 = (int) 500;
-    int t2 = (int) 500;
-    int t3 = (int) 500;
-    int t4 = (int) 500;
-    int t5 = (int) 500;
-    int t6 = (int) 500;
-    int t7 = (int) 500;*/
-
+    
     char buf[200];
-    String s0 = "######";
     String s1 = "T:";
     s1 += t1;
     s1 += "-";
@@ -122,23 +101,20 @@ void loop() {
     s1 += "-";
     s1 += t7;
 
-   
-
-    //String dataStrng = "Temp1:%d-Temp2:%d-Temp3:%d-Temp4:%d-Temp5:%d-Temp6:%d-Temp7:%d",t1,t2,t3,t4,t5,t6,t7;
     Serial.println(s1);
-    s1 = s0 + s1;
-    s1.toCharArray(buf,200);//Serial.read();
+    s1 = "######" + s1;
+    s1.toCharArray(buf,200);
     Serial1.print(buf);
   }
   
   String s;
   String r;
-  /*if(Serial.available()) {
+  if(Serial.available()) {
       r = Serial.readString();
       if (r == "lessWood") {
         Serial1.print("lessWood");
       }
-  }*/
+  }
     
   if (Serial1.available()) {
     s = Serial1.readString();

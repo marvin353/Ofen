@@ -20,13 +20,13 @@ class PiArduinoCommunicator2:
     def get_error(self):
         return self.error
 
-    def decideTempOrSettings(self,stri): 
+    def decideTempOrSettings(self,striL):
         try:
-            striL = str(stri)
-            striL = striL[2:]
-            striL = striL[:-5]
-            print(striL)
-            striL = striL.replace(" ","")
+
+            #striL = stri
+            #striL = striL[2:]
+            #striL = striL[:-5]
+            #stri = stri.replace(" ","")
             
             if "D" in striL:
                 strParts = re.split("-",striL)
@@ -93,14 +93,10 @@ class PiArduinoCommunicator2:
         error = 0
         values = [0,0,0,0,0,0,0]
 
-        #str = "NAN-NAN-NAN-NAN-NAN-NAN-NAN"
-
         print("Temperatures: " + str(stri))
         
         try:
-
             strParts = re.split("-",stri)
-
             for idx, strPart in enumerate(strParts):
                     try:
                         if(strPart.lower() == "nan"):
@@ -132,9 +128,10 @@ class PiArduinoCommunicator2:
     def readFromSerialLoop(self):
         while True:
             try:
-                read_ser=self.ser.readline()
-            #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
-                #read_ser = self.ser.readline().decode('utf-8').rstrip()
+
+                #read_ser=self.ser.readline()
+                #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
+                read_ser = self.ser.readline().decode('utf-8').rstrip().replace(" ","")
                 self.decideTempOrSettings(read_ser)
             except:
                 print("Serial Connection ERROR")
