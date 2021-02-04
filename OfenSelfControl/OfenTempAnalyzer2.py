@@ -12,13 +12,10 @@ class OfenTempAnalyzer2:
 
     eps = 10
     CURRENT_TEMP_ARRAY_LENGTH = 10
-    arrayLength = 60 # Entspricht der halben Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
+    arrayLength = 60 # Entspricht der doppelten Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
 
     def __init__(self,ofen):
-        
-        #t = np.array(range(0,60))
-        #t = t.reshape(-1, 1)
-    
+
         self.ofen = ofen
 
         self.autoMode = False
@@ -78,14 +75,14 @@ class OfenTempAnalyzer2:
         reached = t_i1 / t2h  # Wert zwischen 0.0 und 1.0
 
         # Neuen Wert für Lufteinlass berechnen
-        print("ti########################################")
+        """print("ti########################################")
         print(ti)
         print("m########################################")
         print(m)
         print("t2h########################################")
         print(t2h)
         print("REACHED########################################")
-        print(reached)
+        print(reached)"""
         if reached <= 0.5:
             new_AirInput_value = 1.0
 
@@ -135,7 +132,7 @@ class OfenTempAnalyzer2:
 
 
     def condenseArrayValues(self,tempValues):
-        temp1values = np.max(tempValues, axis=1)
+       temp1values = np.max(tempValues, axis=1)
 
         x = np.array(temp1values)
         y = x[np.nonzero(x)]
@@ -145,12 +142,10 @@ class OfenTempAnalyzer2:
             y = [1,1]
         return y
 
-        # Eigentlicher code...
         #return np.median(tempValues, axis=1)
 
 
     def medianCurrentTemp(self, tempValues):
-        print("tempvalues########################################")
         print(tempValues)
 
         temp1values = [item[0] for item in tempValues]
