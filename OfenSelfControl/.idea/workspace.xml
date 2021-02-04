@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ButtonObserver2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HardwareController2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer2.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenTempAnalyzer2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiArduinoComunicator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiArduinoComunicator2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
+            <state relative-caret-position="495">
               <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -45,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1934">
-              <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+            <state relative-caret-position="637">
+              <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#2261#2580#1" />
@@ -129,11 +125,6 @@
               <item name="OfenSelfControl" type="b2602c69:ProjectViewProjectNode" />
               <item name="OfenSelfControl" type="462c0819:PsiDirectoryNode" />
               <item name="Analytics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfenSelfControl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfenSelfControl" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -315,11 +306,12 @@
       <workItem from="1611394569164" duration="2632000" />
       <workItem from="1611489083556" duration="11759000" />
       <workItem from="1612429400194" duration="660000" />
+      <workItem from="1612437405992" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192968000" />
+    <option name="totallyTimeSpent" value="193004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -334,7 +326,7 @@
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17310444" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17525035" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -477,19 +469,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1255">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
+        <state relative-caret-position="495">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -497,10 +479,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2355">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1934">
-          <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+        <state relative-caret-position="637">
+          <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#2261#2580#1" />
