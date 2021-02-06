@@ -87,7 +87,7 @@ class HardwareController:
             print("Keep Value (Drosselklappe)")
 
         self.currentValue1 = newValue
-        motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.0001)
+        motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.005)
         motor.Stop()
         self.motor1running = False
 
@@ -116,6 +116,6 @@ class HardwareController:
             print("Keep Value (AirInput)")
 
         self.currentValue2 = newValue
-        motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.00001)
+        motor.TurnStep(Dir=motorDirection, steps=value2move, stepdelay=0.001)
         motor.Stop()
         self.motor2running = False

@@ -58,7 +58,7 @@ class OfenTempAnalyzer2:
         if (len(values) == 0 or self.ofen.get_temp2hold() == -1000):
             return
 
-        p = 1000
+        p = 100
         new_AirInput_value = 0.0
         new_drosselvalue = 0.0
         d_th = 10
@@ -75,14 +75,14 @@ class OfenTempAnalyzer2:
         reached = t_i1 / t2h  # Wert zwischen 0.0 und 1.0
 
         # Neuen Wert für Lufteinlass berechnen
-        """print("ti########################################")
+        print("ti########################################")
         print(ti)
         print("m########################################")
         print(m)
         print("t2h########################################")
         print(t2h)
         print("REACHED########################################")
-        print(reached)"""
+        print(reached)
         if reached <= 0.5:
             new_AirInput_value = 1.0
 
@@ -109,8 +109,8 @@ class OfenTempAnalyzer2:
             new_drosselvalue = 0.0
 
         # Temperatur kann nicht gehalten werden --> mehr Brennmaterial wird benötigt --> Alarm auslösen
-        if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90:
-            self.ofen.triggerAlert("lessWood")
+        #if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90:
+            #self.ofen.triggerAlert("lessWood")
 
         self.ofen.set_airInput(new_AirInput_value)
         self.ofen.set_Drosselklappe(new_drosselvalue)
@@ -120,11 +120,11 @@ class OfenTempAnalyzer2:
 
         tempValuesCondensed = self.condenseArrayValues(tempValues)
 
-        if tempValuesCondensed.size < self.arrayLength:
-            return -1000
+        #if tempValuesCondensed.size < self.arrayLength:
+          #  return -1000
 
         model = LinearRegression()
-        model.fit(t[:self.arrayLength], tempValuesCondensed)
+        model.fit(t[:tempValuesCondensed.size], tempValuesCondensed)
 
         m = model.coef_
 
@@ -132,7 +132,7 @@ class OfenTempAnalyzer2:
 
 
     def condenseArrayValues(self,tempValues):
-       temp1values = np.max(tempValues, axis=1)
+        temp1values = np.max(tempValues, axis=1)
 
         x = np.array(temp1values)
         y = x[np.nonzero(x)]

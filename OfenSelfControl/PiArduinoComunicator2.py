@@ -22,6 +22,7 @@ class PiArduinoCommunicator2:
 
     def decideTempOrSettings(self,striL):
         try:
+
             #striL = stri
             #striL = striL[2:]
             #striL = striL[:-5]
@@ -127,6 +128,7 @@ class PiArduinoCommunicator2:
     def readFromSerialLoop(self):
         while True:
             try:
+                #read_ser=self.ser.readline()
                 #Read incomind Data from Serial, decode Bytes as UTF-8 String, cut \r\n (=trailing characters)
                 read_ser = self.ser.readline().decode('utf-8').rstrip().replace(" ","")
                 self.decideTempOrSettings(read_ser)
