@@ -12,13 +12,10 @@ class OfenTempAnalyzer2:
 
     eps = 10
     CURRENT_TEMP_ARRAY_LENGTH = 10
-    arrayLength = 60 # Entspricht der halben Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
+    arrayLength = 60 # Entspricht der doppelten Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
 
     def __init__(self,ofen):
-        
-        #t = np.array(range(0,60))
-        #t = t.reshape(-1, 1)
-    
+
         self.ofen = ofen
 
         self.autoMode = False
@@ -61,7 +58,7 @@ class OfenTempAnalyzer2:
         if (len(values) == 0 or self.ofen.get_temp2hold() == -1000):
             return
 
-        p = 1000
+        p = 100
         new_AirInput_value = 0.0
         new_drosselvalue = 0.0
         d_th = 10
@@ -112,8 +109,8 @@ class OfenTempAnalyzer2:
             new_drosselvalue = 0.0
 
         # Temperatur kann nicht gehalten werden --> mehr Brennmaterial wird benötigt --> Alarm auslösen
-        if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90:
-            self.ofen.triggerAlert("lessWood")
+        #if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90:
+            #self.ofen.triggerAlert("lessWood")
 
         self.ofen.set_airInput(new_AirInput_value)
         self.ofen.set_Drosselklappe(new_drosselvalue)
@@ -123,11 +120,11 @@ class OfenTempAnalyzer2:
 
         tempValuesCondensed = self.condenseArrayValues(tempValues)
 
-        if tempValuesCondensed.size < self.arrayLength:
-            return -1000
+        #if tempValuesCondensed.size < self.arrayLength:
+          #  return -1000
 
         model = LinearRegression()
-        model.fit(t[:self.arrayLength], tempValuesCondensed)
+        model.fit(t[:tempValuesCondensed.size], tempValuesCondensed)
 
         m = model.coef_
 
@@ -145,12 +142,10 @@ class OfenTempAnalyzer2:
             y = [1,1]
         return y
 
-        # Eigentlicher code...
         #return np.median(tempValues, axis=1)
 
 
     def medianCurrentTemp(self, tempValues):
-        print("tempvalues########################################")
         print(tempValues)
 
         temp1values = [item[0] for item in tempValues]
