@@ -1,4 +1,4 @@
-from OfenTempAnalyzer2 import OfenTempAnalyzer2
+from OfenTempAnalyzer3 import OfenTempAnalyzer3
 import threading
 import time
 import numpy as np
@@ -32,7 +32,7 @@ class Ofen:
             self.t1 = threading.Thread(target=self.collectDataSimulation, args=())
             self.t1.start()
 
-        self.tempAnalyzer = OfenTempAnalyzer2(self)
+        self.tempAnalyzer = OfenTempAnalyzer3(self)
         #self.tempAnalyzer.activateAutoMode()
 
 
