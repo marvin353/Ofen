@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/OfenTempAnalyzer3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/CryptoBot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/CryptoBotBD.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/LocalDataStorage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CryptoBot/testNB.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HardwareController.py" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ofen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ofen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/Analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer3.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenTempAnalyzer3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="142">
+              <caret line="28" column="27" selection-start-line="28" selection-end-line="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -41,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2652">
-              <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -54,9 +62,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analytics/Analyze.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="77" lean-forward="true" selection-end-line="77" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1905">
+              <caret line="127" column="28" selection-end-line="147" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OfenMain.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="10" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ofen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="435">
               <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -108,14 +152,14 @@
         <option value="$PROJECT_DIR$/ButtonObserver2.py" />
         <option value="$PROJECT_DIR$/ButtonObserver.py" />
         <option value="$PROJECT_DIR$/HardwareController2.py" />
-        <option value="$PROJECT_DIR$/Analytics/Analyze.py" />
         <option value="$PROJECT_DIR$/ServerMessenger.py" />
         <option value="$PROJECT_DIR$/PiArduinoComunicator2.py" />
         <option value="$PROJECT_DIR$/OfenTempAnalyzer.py" />
         <option value="$PROJECT_DIR$/OfenTempAnalyzer2.py" />
         <option value="$PROJECT_DIR$/HardwareController.py" />
-        <option value="$PROJECT_DIR$/OfenTempAnalyzer3.py" />
         <option value="$PROJECT_DIR$/Ofen.py" />
+        <option value="$PROJECT_DIR$/OfenTempAnalyzer3.py" />
+        <option value="$PROJECT_DIR$/Analytics/Analyze.py" />
       </list>
     </option>
   </component>
@@ -129,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,7 +190,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,12 +367,13 @@
       <workItem from="1612429400194" duration="660000" />
       <workItem from="1612437405992" duration="36000" />
       <workItem from="1612437565253" duration="495000" />
-      <workItem from="1612518288404" duration="6391000" />
+      <workItem from="1612518288404" duration="8789000" />
+      <workItem from="1613850370959" duration="2746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199890000" />
+    <option name="totallyTimeSpent" value="205034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,14 +386,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1795422" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18168813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.041551247" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20240964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -358,13 +402,13 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Jupyter" order="11" visible="true" weight="0.20120482" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32891566" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49518073" visible="true" weight="0.16666667" />
-      <window_info anchor="right" x="0" y="0" width="310" height="700" id="Documentation" order="4" sideWeight="0.5048193" side_tool="true" visible="true" weight="0.16666667" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.4939759" visible="true" weight="0.37267524" />
+      <window_info anchor="right" x="0" y="0" width="310" height="700" id="Documentation" order="4" sideWeight="0.5060241" side_tool="true" visible="true" weight="0.37267524" />
       <window_info anchor="right" id="Database" order="5" sideWeight="0.495283" weight="0.1788269" />
     </layout>
   </component>
@@ -375,7 +419,7 @@
     <SUITE FILE_PATH="coverage/OfenSelfControl$OfenMain.coverage" NAME="OfenMain Coverage Results" MODIFIED="1598192802307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OfenSelfControl$LocalDataStorage.coverage" NAME="LocalDataStorage Coverage Results" MODIFIED="1596710848951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OfenSelfControl$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1595062458260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/OfenSelfControl$Analyze.coverage" NAME="Analyze Coverage Results" MODIFIED="1611576647955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/OfenSelfControl$Analyze.coverage" NAME="Analyze Coverage Results" MODIFIED="1612632618420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
     <SUITE FILE_PATH="coverage/OfenSelfControl$OfenTempAnalyzer.coverage" NAME="OfenTempAnalyzer Coverage Results" MODIFIED="1591348087001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OfenSelfControl$test.coverage" NAME="test Coverage Results" MODIFIED="1591867258711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OfenSelfControl$Gui.coverage" NAME="Gui Coverage Results" MODIFIED="1593948370983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -404,32 +448,12 @@
     <entry file="file://$PROJECT_DIR$/testNotebook.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analytics/Analyze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gui2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-401">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -443,13 +467,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HardwareController2.py" />
     <entry file="file://$PROJECT_DIR$/ButtonObserver2.py" />
-    <entry file="file://$PROJECT_DIR$/OfenMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="11" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ServerMessenger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
@@ -488,19 +505,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
+    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="135">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ofen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="435">
           <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
@@ -508,12 +525,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OfenTempAnalyzer3.py">
+    <entry file="file://$PROJECT_DIR$/LocalDataStorage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="184" column="9" selection-start-line="184" selection-start-column="9" selection-end-line="184" selection-end-column="9" />
+        <state relative-caret-position="1905">
+          <caret line="127" column="28" selection-end-line="147" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OfenMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analytics/Analyze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="77" lean-forward="true" selection-end-line="77" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiArduinoComunicator2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="28" column="27" selection-start-line="28" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
