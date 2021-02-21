@@ -10,7 +10,7 @@ t = np.array(
 t = t.reshape(-1, 1)
 
 
-class OfenTempAnalyzer2:
+class OfenTempAnalyzer3:
     eps = 10
     CURRENT_TEMP_ARRAY_LENGTH = 10
     arrayLength = 60  # Entspricht der doppelten Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
