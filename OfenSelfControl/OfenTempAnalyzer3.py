@@ -10,7 +10,7 @@ t = np.array(
 t = t.reshape(-1, 1)
 
 
-class OfenTempAnalyzer2:
+class OfenTempAnalyzer3:
     eps = 10
     CURRENT_TEMP_ARRAY_LENGTH = 10
     arrayLength = 60  # Entspricht der doppelten Intervalllänge da 1 mal pro Sekunde Daten gesammelt werden und 50% überlappen
@@ -79,14 +79,14 @@ class OfenTempAnalyzer2:
         reached = t_i1 / t2h  # Wert zwischen 0.0 und 1.0
 
         # Neuen Wert für Lufteinlass berechnen
-        """print("ti########################################")
+        print("ti########################################")
         print(ti)
         print("m########################################")
         print(m)
         print("t2h########################################")
         print(t2h)
         print("REACHED########################################")
-        print(reached)"""
+        print(reached)
 
         # Lufteinlass:
         # Temperatur unter Zieltemperatur
@@ -148,8 +148,8 @@ class OfenTempAnalyzer2:
 
 
         # Temperatur kann nicht gehalten werden --> mehr Brennmaterial wird benötigt --> Alarm auslösen
-        if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90 and self.ofen.get_FanValue() == 1.0:
-            self.ofen.triggerAlert("lessWood")
+        #if m < 0 and self.ofen.get_Drosselklappe() == 0.0 and self.ofen.get_airInput() > 0.90 and self.ofen.get_FanValue() == 1.0:
+         #   self.ofen.triggerAlert("lessWood")
 
 
         self.ofen.set_airInput(new_AirInput_value)
@@ -160,11 +160,11 @@ class OfenTempAnalyzer2:
 
         tempValuesCondensed = self.condenseArrayValues(tempValues)
 
-        if tempValuesCondensed.size < self.arrayLength:
-            return -1000
+        #if tempValuesCondensed.size < self.arrayLength:
+            #return -1000
 
         model = LinearRegression()
-        model.fit(t[:self.arrayLength], tempValuesCondensed)
+        model.fit(t[:tempValuesCondensed.size], tempValuesCondensed)
 
         m = model.coef_
 
