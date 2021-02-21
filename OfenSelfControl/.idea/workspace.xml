@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4727a3f-b172-4062-b39d-343de3b5d159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/CryptoBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/CryptoBotBD.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/LocalDataStorage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CryptoBot/testNB.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CryptoBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CryptoBot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CryptoBot/CryptoBotBD.db" beforeDir="false" afterPath="$PROJECT_DIR$/../CryptoBot/CryptoBotBD.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CryptoBot/LocalDataStorage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CryptoBot/LocalDataStorage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CryptoBot/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CryptoBot/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/Analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Analyze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OfenTempAnalyzer3.py" beforeDir="false" afterPath="$PROJECT_DIR$/OfenTempAnalyzer3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -386,6 +379,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18168813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
