@@ -18,6 +18,7 @@ class CBMain(object):
         self.coins = 0
         self.currentPrice = 0
         self.x = 0
+        self.diff = 0
         self.th_upper = 0.01
         self.th_lower = -0.01
 
@@ -48,16 +49,16 @@ class CBMain(object):
                 print("Make decision")
                 self.currentPrice = self.getCurrentPrice()
 
-                diff = (self.currentPrice / self.x) - 1
-                print("Diff: " + str(diff) + ", X: " + str(self.x) + ", CP: " + str(self.currentPrice) + ", Bal: " + str(self.balance) + ", Coins: " + str(self.coins))
+                self.diff = (self.currentPrice / self.x) - 1
+                print("Diff: " + str(self.diff) + ", X: " + str(self.x) + ", CP: " + str(self.currentPrice) + ", Bal: " + str(self.balance) + ", Coins: " + str(self.coins))
 
-                if self.nextAction == "sell" and diff >= self.th_upper:
+                if self.nextAction == "sell" and self.diff >= self.th_upper:
                     #sell action
                     self.sellAction()
                     self.nextAction = "buy"
                     self.x = self.currentPrice
 
-                if self.nextAction == "buy" and diff <= self.th_lower:
+                if self.nextAction == "buy" and self.diff <= self.th_lower:
                     #buy action
                     self.buyAction()
                     self.nextAction = "sell"
@@ -92,7 +93,7 @@ class CBMain(object):
 
 
     def storeData(self):
-        self.localDataStorage.appendData(self.worth, self.coins, self.currentPrice, self.balance, self.th_lower, self.th_upper)
+        self.localDataStorage.appendData(self.worth, self.coins, self.currentPrice, self.x, self.diff, self.balance, self.th_lower, self.th_upper)
 
 
 

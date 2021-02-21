@@ -40,7 +40,7 @@ class LocalDataStorage(object):
         return json.dumps(results)
 
 
-    def appendData(self, worth, coins, currentPrice, balance, thLower, thUpper):
+    def appendData(self, worth, coins, currentPrice, x, diff, balance, thLower, thUpper):
 
         now = datetime.now()
         date_time = now.strftime("%d-%m-%Y, %H:%M:%S")
@@ -49,10 +49,10 @@ class LocalDataStorage(object):
         c = conn.cursor()
 
         sqlite_insert_with_param = """INSERT INTO CBTable
-                                  (ID, worth , coins, current_price, balance, th_lower, th_upper, timestamp) 
-                                  VALUES (NULL , ?, ?, ?, ?, ?, ?, ?);"""
+                                  (ID, worth , coins, current_price, x, diff, balance, th_lower, th_upper, timestamp) 
+                                  VALUES (NULL , ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
 
-        data_tuple = (worth, coins, currentPrice, balance, thLower, thUpper, date_time)
+        data_tuple = (worth, coins, currentPrice, x, diff, balance, thLower, thUpper, date_time)
         c.execute(sqlite_insert_with_param, data_tuple)
 
         conn.commit()
