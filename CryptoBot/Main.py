@@ -19,8 +19,9 @@ class CBMain(object):
         self.currentPrice = 0
         self.x = 0
         self.diff = 0
-        self.th_upper = 0.01
-        self.th_lower = -0.01
+        self.lastdiff = 0
+        self.th_upper = 0.002
+        self.th_lower = -0.002
 
         self.nextAction = "null" # "sell or buy"
 
@@ -50,26 +51,29 @@ class CBMain(object):
                 self.currentPrice = self.getCurrentPrice()
 
                 self.diff = (self.currentPrice / self.x) - 1
-                print("Diff: " + str(self.diff) + ", X: " + str(self.x) + ", CP: " + str(self.currentPrice) + ", Bal: " + str(self.balance) + ", Coins: " + str(self.coins))
 
-                if self.nextAction == "sell" and self.diff >= self.th_upper:
-                    #sell action
-                    self.sellAction()
-                    self.nextAction = "buy"
-                    self.x = self.currentPrice
+                if self.nextAction == "sell" and self.diff >= self.th_upper or self.nextAction == "sell" and self.diff < 0:
+                    if self.lastdiff > self.diff or self.diff < 0:
+                        #sell action
+                        self.sellAction()
+                        self.nextAction = "buy"
+                        self.x = self.currentPrice
+                else:
+                    if self.nextAction == "buy" and self.diff <= self.th_lower or self.nextAction == "buy" and self.diff > 0:
+                        if self.lastdiff < self.diff or self.diff > 0:
+                            #buy action
+                            self.buyAction()
+                            self.nextAction = "sell"
+                            self.x = self.currentPrice
 
-                if self.nextAction == "buy" and self.diff <= self.th_lower:
-                    #buy action
-                    self.buyAction()
-                    self.nextAction = "sell"
-                    self.x = self.currentPrice
-
+                self.lastdiff = self.diff
                 self.worth = self.coins * self.currentPrice + self.balance
-                self.storeData()
-                time.sleep(60)
+                #self.storeData()
+                print("Worth: " + str(self.worth) + ", Diff: " + str(int(self.diff * 10000)/100) + "%, X: " + str(self.x) + ", CP: " + str(self.currentPrice) + ", Bal: " + str(self.balance) + ", Coins: " + str(self.coins))
+                time.sleep(30)
             except Exception as e:
                 print(e)
-                time.sleep(60)
+                time.sleep(30)
 
 
     def sellAction(self):
@@ -90,12 +94,20 @@ class CBMain(object):
         price_str = price_str.replace(",", "")
         price = float(price_str)
         return price
+        
+    def setCurrentPrice(self):
+        while(True):
+            self.currentPrice = self.getCurrentPrice()
+            print(self.currentPrice)
+            time.sleep(5)
 
 
     def storeData(self):
         self.localDataStorage.appendData(self.worth, self.coins, self.currentPrice, self.x, self.diff, self.balance, self.th_lower, self.th_upper)
 
-
+    
+    def graph(self):
+        print("graph")
 
 
 if __name__ == '__main__':
